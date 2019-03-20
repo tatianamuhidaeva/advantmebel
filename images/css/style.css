@@ -306,8 +306,28 @@ a {
 }
 
 @media (min-width: 768px) {
+  .footer {
+    background-color: #fff;
+    background-image: radial-gradient(ellipse farthest-corner at 10% 90%, #ceaf6b, #fff);
+    background-repeat: no-repeat;
+  }
+  .footer .container {
+    position: relative;
+  }
+  .footer .container::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: -135px;
+    top: 0;
+    background-image: url("../img/ellips_bg.png");
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: 0 0;
+  }
   .footer-main {
-    padding: 48px 0 20px;
+    padding: 48px 0 7px;
   }
   .footer-info {
     -webkit-box-orient: vertical;
@@ -317,6 +337,7 @@ a {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
+    margin-bottom: 0;
   }
   .footer-callback {
     margin-left: 0;
@@ -345,6 +366,9 @@ a {
 }
 
 @media (min-width: 992px) {
+  .footer .container::before {
+    left: -226px;
+  }
   .footer-main {
     padding: 80px 0 30px;
   }
