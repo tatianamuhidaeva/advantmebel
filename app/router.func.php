@@ -4,6 +4,7 @@ route_all();
 
 route('/error_404', 'error_404');
 route('/', 'pages#');
+// route('/index.html', 'pages#index');
 
 
 //route('/news/index', 'content', 'news#index');

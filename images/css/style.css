@@ -1,27 +1,27 @@
 @font-face {
   font-family: 'MullerBold';
-  src: url("/images/fonts/mullerbold/MullerBold.eot?#iefix") format("embedded-opentype"), url("/images/fonts//images/fonts/mullerbold/MullerBold.otf") format("opentype"), url("/images/fonts/mullerbold/MullerBold.woff") format("woff"), url("/images/fonts/mullerbold/MullerBold.ttf") format("truetype"), url("/images/fonts/mullerbold/MullerBold.svg#MullerBold") format("svg");
+  src: url("../fonts/mullerbold/MullerBold.eot?#iefix") format("embedded-opentype"), url("../fonts/mullerbold/MullerBold.otf") format("opentype"), url("../fonts/mullerbold/MullerBold.woff") format("woff"), url("../fonts/mullerbold/MullerBold.ttf") format("truetype"), url("../fonts/mullerbold/MullerBold.svg#MullerBold") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'MullerLight';
-  src: url("/images/fonts/mullerlight/MullerLight.eot?#iefix") format("embedded-opentype"), url("/images/fonts/mullerlight/MullerLight.otf") format("opentype"), url("/images/fonts/mullerlight/MullerLight.woff") format("woff"), url("/images/fonts/mullerlight/MullerLight.ttf") format("truetype"), url("/images/fonts/mullerlight/MullerLight.svg#MullerLight") format("svg");
+  src: url("../fonts/mullerlight/MullerLight.eot?#iefix") format("embedded-opentype"), url("../fonts/mullerlight/MullerLight.otf") format("opentype"), url("../fonts/mullerlight/MullerLight.woff") format("woff"), url("../fonts/mullerlight/MullerLight.ttf") format("truetype"), url("../fonts/mullerlight/MullerLight.svg#MullerLight") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'MullerMedium';
-  src: url("/images/fonts/mullermedium/MullerMedium.eot?#iefix") format("embedded-opentype"), url("/images/fonts/mullermedium/MullerMedium.otf") format("opentype"), url("/images/fonts/mullermedium/MullerMedium.woff") format("woff"), url("/images/fonts/mullermedium/MullerMedium.ttf") format("truetype"), url("/images/fonts/mullermedium/MullerMedium.svg#MullerMedium") format("svg");
+  src: url("../fonts/mullermedium/MullerMedium.eot?#iefix") format("embedded-opentype"), url("../fonts/mullermedium/MullerMedium.otf") format("opentype"), url("../fonts/mullermedium/MullerMedium.woff") format("woff"), url("../fonts/mullermedium/MullerMedium.ttf") format("truetype"), url("../fonts/mullermedium/MullerMedium.svg#MullerMedium") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'MullerRegular';
-  src: url("/images/fonts/mullerregular/MullerRegular.eot?#iefix") format("embedded-opentype"), url("/images/fonts/mullerregular/MullerRegular.otf") format("opentype"), url("/images/fonts/mullerregular/MullerRegular.woff") format("woff"), url("/images/fonts/mullerregular/MullerRegular.ttf") format("truetype"), url("/images/fonts/mullerregular/MullerRegular.svg#MullerRegular") format("svg");
+  src: url("../fonts/mullerregular/MullerRegular.eot?#iefix") format("embedded-opentype"), url("../fonts/mullerregular/MullerRegular.otf") format("opentype"), url("../fonts/mullerregular/MullerRegular.woff") format("woff"), url("../fonts/mullerregular/MullerRegular.ttf") format("truetype"), url("../fonts/mullerregular/MullerRegular.svg#MullerRegular") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -46,29 +46,19 @@
   outline: none;
 }
 
-*, *::after, *::before {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-.clearfix::after, .clearfix::before {
-  content: '';
-  display: table;
-  clear: both;
-}
-
 img {
   max-width: 100%;
 }
 
-*[class*='col-'] {
-  float: none;
-  display: inline-block;
-  vertical-align: middle;
-}
-
 body {
   font-family: 'MullerRegular';
+  color: #333333;
+  background-color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .header {
@@ -90,6 +80,13 @@ body {
 }
 
 .header-callback {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   text-align: center;
 }
 
@@ -102,6 +99,7 @@ body {
 }
 
 .header__toggle-btn {
+  margin-left: -15px;
   border: none;
   outline: none;
   background: none;
@@ -122,9 +120,7 @@ body {
 .header-navbar__list {
   padding: 30px 0;
   width: 90%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -144,7 +140,13 @@ body {
   text-decoration: none;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 576px) {
+  .header .header-callback {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
   .header .header__phone {
     display: inline-block;
   }
