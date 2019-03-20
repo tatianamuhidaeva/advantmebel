@@ -1,0 +1,171 @@
+@font-face {
+  font-family: 'MullerBold';
+  src: url("/images/fonts/mullerbold/MullerBold.eot?#iefix") format("embedded-opentype"), url("/images/fonts//images/fonts/mullerbold/MullerBold.otf") format("opentype"), url("/images/fonts/mullerbold/MullerBold.woff") format("woff"), url("/images/fonts/mullerbold/MullerBold.ttf") format("truetype"), url("/images/fonts/mullerbold/MullerBold.svg#MullerBold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MullerLight';
+  src: url("/images/fonts/mullerlight/MullerLight.eot?#iefix") format("embedded-opentype"), url("/images/fonts/mullerlight/MullerLight.otf") format("opentype"), url("/images/fonts/mullerlight/MullerLight.woff") format("woff"), url("/images/fonts/mullerlight/MullerLight.ttf") format("truetype"), url("/images/fonts/mullerlight/MullerLight.svg#MullerLight") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MullerMedium';
+  src: url("/images/fonts/mullermedium/MullerMedium.eot?#iefix") format("embedded-opentype"), url("/images/fonts/mullermedium/MullerMedium.otf") format("opentype"), url("/images/fonts/mullermedium/MullerMedium.woff") format("woff"), url("/images/fonts/mullermedium/MullerMedium.ttf") format("truetype"), url("/images/fonts/mullermedium/MullerMedium.svg#MullerMedium") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MullerRegular';
+  src: url("/images/fonts/mullerregular/MullerRegular.eot?#iefix") format("embedded-opentype"), url("/images/fonts/mullerregular/MullerRegular.otf") format("opentype"), url("/images/fonts/mullerregular/MullerRegular.woff") format("woff"), url("/images/fonts/mullerregular/MullerRegular.ttf") format("truetype"), url("/images/fonts/mullerregular/MullerRegular.svg#MullerRegular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.btn {
+  display: inline-block;
+  border: 0;
+  outline: none;
+  border-radius: 10px;
+  background-color: #ffffff;
+  padding: 0 20px;
+  text-align: center;
+  height: 20px;
+  font-family: 'MullerRegular';
+  font-size: 10px;
+  color: #2a262c;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+*, *::after, *::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.clearfix::after, .clearfix::before {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+img {
+  max-width: 100%;
+}
+
+*[class*='col-'] {
+  float: none;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+body {
+  font-family: 'MullerRegular';
+}
+
+.header {
+  padding: 16px 0;
+  background-color: #e9d19c;
+}
+
+.header-logo {
+  padding-top: 0;
+  padding-bottom: 0;
+  height: 38px;
+}
+
+.header-logo img {
+  width: 45px;
+  height: 38px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.header-callback {
+  text-align: center;
+}
+
+.header__phone {
+  display: block;
+  font-family: "MullerBold";
+  color: #333333;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.header__toggle-btn {
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+}
+
+.header__toggle-btn:focus {
+  outline: none;
+}
+
+.header__toggle-elem {
+  height: 4px;
+  width: 24px;
+  margin-bottom: 4px;
+  background-color: #333333;
+}
+
+.header-navbar__list {
+  padding: 30px 0;
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #fff2d4;
+  text-align: left;
+}
+
+.header-navbar__item {
+  display: block;
+  height: 40px;
+  width: 100%;
+  border-bottom: 2px solid #e9d19c;
+  font-family: "MullerBold";
+  color: #333333;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .header .header__phone {
+    display: inline-block;
+  }
+  .header .header-navbar__list {
+    padding: 0;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-color: transparent;
+    width: auto;
+  }
+  .header .header-navbar__item {
+    width: auto;
+    height: auto;
+  }
+}
+/*# sourceMappingURL=style.css.map */

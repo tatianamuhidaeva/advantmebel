@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>
+		<?php if(d()->Seo->title != ''){?>{Seo.title}
+		<?php } else { if(iam()){?>Тайтл не заполнен в модуле SEO -
+		<?php }?>{.title}
+		<?php }?>
+	</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<?if(d()->Seo->description != ''):?>
+	<meta name="description" content="{Seo.description|h}" />
+	<?endif;?>
+	<?if(d()->Seo->keywords != ''):?>
+	<meta name="keywords" content="{Seo.keywords|h}" />
+	<?endif;?>
+
+	<!-- <style>
+		<? $css='';
+		$css_arrs=array('/images/css/bootstrap.min.css', '/images/css/style.css');
+
+		foreach($css_arrs as $css_arr) {
+			$css .=str_replace('; ', ';', str_replace(' }', '}', str_replace('{ ', '{', str_replace(array("\r\n", "\r", "\n", "\t", '  ', '    ', '    '), "", preg_replace('!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', file_get_contents($_SERVER['DOCUMENT_ROOT'] . $css_arr))))));
+		}
+
+		echo $css;
+		?>
+	</style> -->
+	<link rel="stylesheet" href="/images/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/images/css/style.css">
+	<script src="/images/js/jquery.min.js"></script>
+	<script src="/images/js/bootstrap.min.js"></script>
+	{Option.meta}
+</head>
+
+<body>
+	{{admin_panel}}
+		<div class="page-root">
+			{{header}}
+			<div class="content">
+				{{{content}}}
+			</div>
+			{{footer}}
+		</div>
+		{Option.metric}
+</body>
+
+</html>
