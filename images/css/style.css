@@ -41,6 +41,34 @@ a {
   color: inherit;
 }
 
+.page__title {
+  color: #38313f;
+  font-family: "MullerBold";
+  font-size: 18px;
+}
+
+.page__title span {
+  position: relative;
+}
+
+.page__title span::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: -3px;
+  bottom: -2px;
+  width: 70%;
+  height: 10px;
+  background-color: #f9efd8;
+  z-index: -1;
+}
+
+.page__breadcrumbs {
+  font-family: 'MullerRegular';
+  color: #aeaeae;
+  font-size: 10px;
+}
+
 .arrow-down {
   display: inline-block;
   width: 6px;
@@ -78,6 +106,12 @@ a {
     border-radius: 11px;
     padding: 0 14px;
   }
+  .page__title {
+    font-size: 28px;
+  }
+  .page__title span::after {
+    height: 12px;
+  }
 }
 
 @media (min-width: 992px) {
@@ -90,6 +124,16 @@ a {
     height: 35px;
     border-radius: 18px;
     padding: 0 25px;
+  }
+  .page__title {
+    font-size: 44px;
+  }
+  .page__title span::after {
+    right: -5px;
+    height: 15px;
+  }
+  .page__breadcrumbs {
+    font-size: 14px;
   }
 }
 
@@ -397,6 +441,82 @@ a {
   }
   .footer-copyright__item {
     font-size: 12px;
+  }
+}
+
+.notfound {
+  padding: 45px 0;
+}
+
+.notfound-main {
+  padding: 50px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.notfound__img {
+  margin-top: 15px;
+  width: 75px;
+  height: 95px;
+}
+
+.notfound-info {
+  margin-left: 30px;
+  color: #a1a1a1;
+}
+
+.notfound__code {
+  font-family: 'Times New Roman';
+  font-size: 65px;
+}
+
+.notfound__text {
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  .notfound {
+    padding: 55px 0;
+  }
+  .notfound-main {
+    padding: 80px 0;
+  }
+  .notfound__img {
+    width: 106px;
+    height: 134px;
+  }
+  .notfound-info {
+    margin-left: 50px;
+  }
+  .notfound__code {
+    font-size: 90px;
+  }
+  .notfound__text {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 992px) {
+  .notfound {
+    padding: 85px 0;
+  }
+  .notfound-main {
+    padding: 130px 0;
+  }
+  .notfound__img {
+    width: 160px;
+    height: 212px;
+  }
+  .notfound-info {
+    margin-left: 75px;
+  }
+  .notfound__code {
+    font-size: 130px;
+  }
+  .notfound__text {
+    font-size: 25px;
   }
 }
 /*# sourceMappingURL=style.css.map */
