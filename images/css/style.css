@@ -26,26 +26,6 @@
   font-style: normal;
 }
 
-.btn {
-  display: inline-block;
-  border: 0;
-  outline: none;
-  border-radius: 10px;
-  background-color: #ffffff;
-  padding: 0 20px;
-  text-align: center;
-  height: 20px;
-  font-family: 'MullerRegular';
-  font-size: 10px;
-  color: #2a262c;
-  line-height: 20px;
-  cursor: pointer;
-}
-
-.btn:focus {
-  outline: none;
-}
-
 img {
   max-width: 100%;
 }
@@ -59,6 +39,58 @@ body {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+.arrow-down {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-width: 3px;
+  border-style: solid;
+  border-color: transparent;
+  border-top-color: inherit;
+  vertical-align: -15%;
+}
+
+.btn {
+  display: inline-block;
+  border: 0;
+  outline: none;
+  border-radius: 10px;
+  background-color: #ffffff;
+  padding: 0 14px;
+  text-align: center;
+  height: 20px;
+  font-family: 'MullerRegular';
+  font-size: 9px;
+  color: #2a262c;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+@media (min-width: 768px) {
+  .btn {
+    height: 23px;
+    border-radius: 11px;
+    padding: 0 14px;
+  }
+}
+
+@media (min-width: 992px) {
+  .arrow-down {
+    width: 10px;
+    height: 10px;
+    border-width: 5px;
+  }
+  .btn {
+    height: 35px;
+    border-radius: 18px;
+    padding: 0 25px;
+  }
 }
 
 .header {
@@ -87,10 +119,12 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  text-align: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
-.header__phone {
+.header-callback__phone {
   display: block;
   font-family: "MullerBold";
   color: #333333;
@@ -140,17 +174,29 @@ a {
   text-decoration: none;
 }
 
-@media (min-width: 576px) {
-  .header .header-callback {
+@media (min-width: 768px) {
+  .header-callback {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
   }
-  .header .header__phone {
+  .header-callback__btn {
+    font-size: 10px;
+  }
+  .header-callback__phone {
     display: inline-block;
+    font-size: 11px;
+    margin-bottom: 0;
+    margin-right: 15px;
   }
-  .header .header-navbar__list {
+  .header-navbar__list {
     padding: 0;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -165,9 +211,29 @@ a {
     background-color: transparent;
     width: auto;
   }
-  .header .header-navbar__item {
+  .header-navbar__item {
     width: auto;
     height: auto;
+    font-family: 'MullerRegular';
+    font-size: 10px;
+  }
+}
+
+@media (min-width: 992px) {
+  .header-callback__btn {
+    font-size: 14px;
+  }
+  .header-callback__phone {
+    font-size: 14px;
+  }
+  .header-navbar__item {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .header-callback__phone {
+    font-size: 18px;
   }
 }
 /*# sourceMappingURL=style.css.map */

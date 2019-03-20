@@ -14,3 +14,45 @@ a
   text-decoration: none
   color: inherit
 
+.arrow-down
+  display: inline-block
+  width: 6px
+  height: 6px
+  border:
+    width: 3px 
+    style: solid
+    color: transparent
+  border-top-color: inherit
+  vertical-align: -15%
+  
+.btn
+  display: inline-block
+  border: 0
+  outline: none
+  border-radius: 10px
+  background-color: #ffffff 
+  padding: 0 14px
+  text-align: center
+  height: 20px
+  +regular
+  font-size: 9px
+  color: #2a262c
+  line-height: 20px
+  cursor: pointer
+  &:focus
+    outline: none
+  
+@media (min-width: $md)
+  .btn
+    height: 23px  
+    border-radius: 11px
+    padding: 0 14px
+@media (min-width: $lg)
+  .arrow-down
+    width: 10px
+    height: 10px
+    border-width: 5px
+  .btn
+    height: 35px  
+    border-radius: 18px
+    padding: 0 25px
