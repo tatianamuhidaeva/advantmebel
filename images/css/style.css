@@ -482,6 +482,18 @@ a {
   }
   .notfound-main {
     padding: 80px 0;
+    position: relative;
+  }
+  .notfound-main::after {
+    content: "";
+    position: absolute;
+    width: 334px;
+    height: 334px;
+    top: -100px;
+    left: 315px;
+    background-image: url("../img/ellips_brown.png");
+    background-repeat: no-repeat;
+    background-size: 334px 334px;
   }
   .notfound__img {
     width: 106px;
@@ -489,6 +501,7 @@ a {
   }
   .notfound-info {
     margin-left: 50px;
+    width: 236px;
   }
   .notfound__code {
     font-size: 90px;
@@ -505,12 +518,20 @@ a {
   .notfound-main {
     padding: 130px 0;
   }
+  .notfound-main::after {
+    width: 530px;
+    height: 530px;
+    top: -165px;
+    left: 406px;
+    background-size: 530px 530px;
+  }
   .notfound__img {
     width: 160px;
     height: 212px;
   }
   .notfound-info {
     margin-left: 75px;
+    width: 350px;
   }
   .notfound__code {
     font-size: 130px;
