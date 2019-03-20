@@ -236,4 +236,143 @@ a {
     font-size: 18px;
   }
 }
+
+.footer {
+  background-color: #e9d19c;
+  font-family: 'MullerRegular';
+  color: #333333;
+}
+
+.footer-main {
+  padding: 28px 0 20px;
+}
+
+.footer-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 35px;
+}
+
+.footer__logo img {
+  width: 67px;
+  height: 55px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.footer-callback {
+  margin-left: 30px;
+}
+
+.footer-callback__phone {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 7px;
+}
+
+.footer-callback__email {
+  display: block;
+  font-size: 11px;
+  margin-bottom: 7px;
+}
+
+.footer-callback__address {
+  display: block;
+  font-size: 11px;
+}
+
+.footer__item {
+  display: block;
+  margin-bottom: 18px;
+  font-size: 12px;
+}
+
+.footer-copyright {
+  padding: 13px 0 18px;
+  border-top: 1px solid #cfa74f;
+}
+
+.footer-copyright__item {
+  font-size: 10px;
+  margin-bottom: 10px;
+}
+
+.footer-copyright__item strong {
+  font-family: "MullerBold";
+}
+
+@media (min-width: 768px) {
+  .footer-main {
+    padding: 48px 0 20px;
+  }
+  .footer-info {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .footer-callback {
+    margin-left: 0;
+    margin-top: 15px;
+  }
+  .footer-callback__phone {
+    font-size: 12px;
+  }
+  .footer-callback__email {
+    font-size: 9px;
+  }
+  .footer-callback__address {
+    font-size: 9px;
+  }
+  .footer__item {
+    font-size: 10px;
+    margin-bottom: 13px;
+  }
+  .footer-copyright {
+    padding: 14px 0;
+  }
+  .footer-copyright__item {
+    font-size: 8px;
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .footer-main {
+    padding: 80px 0 30px;
+  }
+  .footer__logo img {
+    width: 97px;
+    height: 82px;
+  }
+  .footer-callback {
+    margin-top: 18px;
+  }
+  .footer-callback__phone {
+    font-size: 18px;
+  }
+  .footer-callback__email {
+    font-size: 14px;
+  }
+  .footer-callback__address {
+    font-size: 14px;
+  }
+  .footer__item {
+    font-size: 16px;
+    margin-bottom: 18px;
+  }
+  .footer-copyright {
+    padding: 20px 0;
+  }
+  .footer-copyright__item {
+    font-size: 12px;
+  }
+}
 /*# sourceMappingURL=style.css.map */

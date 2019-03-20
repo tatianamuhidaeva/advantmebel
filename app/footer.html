@@ -1,0 +1,52 @@
+<footer class="footer">
+  <div class="container">
+    <div class="footer-main row">
+      <div class="footer-info col-12 col-md">
+        <div class="footer__logo"><a href=""><img src="{Option.logo}" alt=""></a></div>
+        <div class="footer-callback">
+          <a href="tel:+7<?=d()->convert_phone_clean(d()->Option->phone);?>" class="footer-callback__phone">+7
+            {Option.phone}</a>
+          <a href="mailto:{Option.email}" class="footer-callback__email">{Option.email}</a>
+          <span class="footer-callback__address">{Option.addr}</span>
+        </div>
+      </div>
+      <div class="footer-offices col-6 col-md">
+        <div class="footer__list">
+          <a href="#" class="footer__item">Кабинеты Econom class</a>
+          <a href="#" class="footer__item">Кабинеты Business class</a>
+          <a href="#" class="footer__item">Кабинеты First class</a>
+          <a href="#" class="footer__item">Кабинеты Premium class</a>
+        </div>
+      </div>
+      <div class="footer-areas col-6 col-md">
+        <div class="footer__list">
+          <a href="#" class="footer__item">Зоны коммуникаций</a>
+          <a href="#" class="footer__item">Приемные зоны</a>
+          <a href="#" class="footer__item">Зоны работы сотрудников</a>
+          <a href="#" class="footer__item">Зоны ожидания</a>
+          <a href="#" class="footer__item">Стулья и кресла</a>
+          <a href="#" class="footer__item">Офисный свет</a>
+        </div>
+      </div>
+      <div class="footer-nav col-6 col-md">
+        <div class="footer__list">
+          <a href="#" class="footer__item">О компании</a>
+          <a href="#" class="footer__item">Наши проекты</a>
+          <a href="#" class="footer__item">Вакансии</a>
+          <a href="#" class="footer__item">Контакты</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright row">
+      <div class="footer-copyright__item col-12  col-md-3">
+          &copy; Компания &laquo;Адвант&raquo;, 2005 - 2019.
+      </div>
+      <a href="#" class="footer-copyright__item col-12 offset-md-1  col-md-3">
+          Политика конфиденциальности
+      </a>
+      <a href="http://bulgar-promo.ru/" class="footer-copyright__item col-12 offset-md-2  col-md-3" target="_blank">
+          <strong>Разработка сайта</strong> — BulgarPromo
+      </a>
+    </div>
+  </div>
+</footer>
