@@ -32,12 +32,17 @@
 	<link rel="stylesheet" href="/images/css/bootstrap-grid.css">
 	<link rel="stylesheet" href="/images/css/style.css">
 	<script src="/images/js/jquery-3.3.1.min.js"></script>
+	<?if(url() == 'contacts'):?>
+	<script src="https://api-maps.yandex.ru/2.1/?apikey=123&lang=ru_RU" type="text/javascript">
+		</script>
+		<script src="/images/js/yandex-map.js"></script>
+	<?endif;?>
 	{Option.meta}
 </head>
 
 <body>
 	{{admin_panel}}
-		<div class="page-root">
+	<div class="page-root">
 			{{header}}
 			<div class="content">
 				{{{content}}}

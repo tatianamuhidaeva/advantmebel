@@ -587,4 +587,9 @@ a {
     font-size: 25px;
   }
 }
+
+.contacts__map {
+  height: 335px;
+  width: 100%;
+}
 /*# sourceMappingURL=style.css.map */
