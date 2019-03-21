@@ -48,7 +48,12 @@ $start-gr: $md/2
     background-image: radial-gradient(ellipse farthest-corner at 10% 90%, $primary-color, #fff)
     background-repeat: no-repeat
     .container
-      position: relative
+      position: relative      
+      background:
+        image: url('../img/line_white.png'), url('../img/line_white.png'), url('../img/line_white.png')
+        repeat: no-repeat
+        size: auto 100%, auto 100%, auto 100%
+        position: 33% 0, 66% 0, 100% 0 
       &::before
         content: ""
         position: absolute

@@ -41,10 +41,15 @@ a {
   color: inherit;
 }
 
+.page {
+  padding: 45px 0;
+}
+
 .page__title {
   color: #38313f;
   font-family: "MullerBold";
   font-size: 18px;
+  margin-top: 0;
 }
 
 .page__title span {
@@ -67,6 +72,19 @@ a {
   font-family: 'MullerRegular';
   color: #aeaeae;
   font-size: 10px;
+  margin-bottom: 30px;
+}
+
+.page__text {
+  font-family: 'MullerRegular';
+  color: #333333;
+  font-size: 12px;
+  line-height: 25px;
+}
+
+.page__text p {
+  margin-top: 0;
+  margin-bottom: 30px;
 }
 
 .arrow-down {
@@ -106,15 +124,48 @@ a {
     border-radius: 11px;
     padding: 0 14px;
   }
+  .page {
+    padding: 55px 0;
+  }
   .page__title {
     font-size: 28px;
   }
   .page__title span::after {
     height: 12px;
   }
+  .page__breadcrumbs {
+    margin-bottom: 40px;
+  }
+  .page__text {
+    font-size: 10px;
+    line-height: 19px;
+  }
+  .page__text p {
+    margin-bottom: 25px;
+  }
+  .content .bg {
+    position: relative;
+  }
+  .content .bg::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: calc(100% + 100px);
+    top: -55px;
+    left: 0;
+    z-index: -1;
+    background-image: url("../img/ellips_brown.png"), url("../img/line_bg.png"), url("../img/line_bg.png"), url("../img/line_bg.png"), url("../img/line_bg.png");
+    background-repeat: no-repeat;
+    background-size: 334px 334px, auto 100%, auto 100%, auto 100%, auto 100%;
+    background-position: 80% 55px, 15px 0, 33% 0, 66% 0, 100% 0;
+  }
 }
 
 @media (min-width: 992px) {
+  .content .bg::after {
+    top: -80px;
+    background-size: 530px 530px, auto 100%, auto 100%, auto 100%, auto 100%;
+  }
   .arrow-down {
     width: 10px;
     height: 10px;
@@ -125,6 +176,9 @@ a {
     border-radius: 18px;
     padding: 0 25px;
   }
+  .page {
+    padding: 80px 0;
+  }
   .page__title {
     font-size: 44px;
   }
@@ -134,6 +188,14 @@ a {
   }
   .page__breadcrumbs {
     font-size: 14px;
+    margin-bottom: 60px;
+  }
+  .page__text {
+    font-size: 16px;
+    line-height: 30px;
+  }
+  .page__text p {
+    margin-bottom: 40px;
   }
 }
 
@@ -357,6 +419,10 @@ a {
   }
   .footer .container {
     position: relative;
+    background-image: url("../img/line_white.png"), url("../img/line_white.png"), url("../img/line_white.png");
+    background-repeat: no-repeat;
+    background-size: auto 100%, auto 100%, auto 100%;
+    background-position: 33% 0, 66% 0, 100% 0;
   }
   .footer .container::before {
     content: "";
@@ -482,18 +548,6 @@ a {
   }
   .notfound-main {
     padding: 80px 0;
-    position: relative;
-  }
-  .notfound-main::after {
-    content: "";
-    position: absolute;
-    width: 334px;
-    height: 334px;
-    top: -100px;
-    left: 315px;
-    background-image: url("../img/ellips_brown.png");
-    background-repeat: no-repeat;
-    background-size: 334px 334px;
   }
   .notfound__img {
     width: 106px;
@@ -517,13 +571,6 @@ a {
   }
   .notfound-main {
     padding: 130px 0;
-  }
-  .notfound-main::after {
-    width: 530px;
-    height: 530px;
-    top: -165px;
-    left: 406px;
-    background-size: 530px 530px;
   }
   .notfound__img {
     width: 160px;

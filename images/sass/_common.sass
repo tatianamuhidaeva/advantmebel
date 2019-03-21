@@ -15,10 +15,12 @@ a
   color: inherit
 
 .page
+  padding: 45px 0
   &__title
     color: #38313f
     +bold
     font-size: 18px
+    margin-top: 0
     span
       position: relative
       &::after
@@ -35,6 +37,15 @@ a
     +regular
     color: #aeaeae
     font-size: 10px
+    margin-bottom: 30px
+  &__text
+    +regular
+    color: $text-color
+    font-size: 12px
+    line-height: 25px
+    p
+      margin-top: 0
+      margin-bottom: 30px
 
 .arrow-down
   display: inline-block
@@ -67,17 +78,46 @@ a
     outline: none
   
 @media (min-width: $md)
+
   .btn
     height: 23px  
     border-radius: 11px
     padding: 0 14px
   .page
+    padding: 55px 0
     &__title
       font-size: 28px
       span
         &::after
           height: 12px
+    &__breadcrumbs
+      margin-bottom: 40px
+    &__text
+      font-size: 10px
+      line-height: 19px
+      p
+        margin-bottom: 25px
+  .content .bg
+    position: relative
+    &::after
+      content: ""
+      position: absolute
+      width: 100%
+      height: calc(100% + 100px)
+      top: -55px
+      left: 0
+      z-index: -1
+      background:
+        image: url('../img/ellips_brown.png'), url('../img/line_bg.png'), url('../img/line_bg.png'), url('../img/line_bg.png'), url('../img/line_bg.png')
+        repeat: no-repeat
+        size: 334px 334px, auto 100%, auto 100%, auto 100%, auto 100%
+        position: 80% 55px, 15px 0, 33% 0, 66% 0, 100% 0 
 @media (min-width: $lg)
+  .content .bg
+    &::after
+      top: -80px
+      background:
+        size: 530px 530px, auto 100%, auto 100%, auto 100%, auto 100%    
   .arrow-down
     width: 10px
     height: 10px
@@ -87,6 +127,7 @@ a
     border-radius: 18px
     padding: 0 25px
   .page
+    padding: 80px 0
     &__title
       font-size: 44px
       span
@@ -95,3 +136,9 @@ a
           height: 15px
     &__breadcrumbs
       font-size: 14px
+      margin-bottom: 60px
+    &__text
+      font-size: 16px
+      line-height: 30px
+      p
+        margin-bottom: 40px
