@@ -8,7 +8,7 @@ route('/', 'pages#');
 route('/contacts', 'pages#contacts');
 
 
-//route('/news/index', 'content', 'news#index');
+route('/catalogs/', 'catalogs#show');
 //route('/news/index', 'news#index');
 //зарегистрировать контроллер newscontroller по адресу /news/
 //route('news');
