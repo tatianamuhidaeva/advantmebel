@@ -68,6 +68,13 @@ a {
   z-index: -1;
 }
 
+.page__subtitle {
+  font-family: "MullerBold";
+  color: #333333;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
 .page__breadcrumbs {
   font-family: 'MullerRegular';
   color: #aeaeae;
@@ -133,6 +140,10 @@ a {
   .page__title span::after {
     height: 12px;
   }
+  .page__subtitle {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
   .page__breadcrumbs {
     margin-bottom: 40px;
   }
@@ -150,7 +161,7 @@ a {
     content: "";
     position: absolute;
     width: 100%;
-    height: calc(100% + 100px);
+    height: calc(100% + 110px);
     top: -55px;
     left: 0;
     z-index: -1;
@@ -162,15 +173,6 @@ a {
 }
 
 @media (min-width: 992px) {
-  .content .bg::after {
-    top: -80px;
-    background-size: 530px 530px, auto 100%, auto 100%, auto 100%, auto 100%;
-  }
-  .arrow-down {
-    width: 10px;
-    height: 10px;
-    border-width: 5px;
-  }
   .btn {
     height: 35px;
     border-radius: 18px;
@@ -186,6 +188,10 @@ a {
     right: -5px;
     height: 15px;
   }
+  .page__subtitle {
+    font-size: 22px;
+    margin-bottom: 45px;
+  }
   .page__breadcrumbs {
     font-size: 14px;
     margin-bottom: 60px;
@@ -196,6 +202,16 @@ a {
   }
   .page__text p {
     margin-bottom: 40px;
+  }
+  .content .bg::after {
+    top: -80px;
+    height: calc(100% + 160px);
+    background-size: 530px 530px, auto 100%, auto 100%, auto 100%, auto 100%;
+  }
+  .arrow-down {
+    width: 10px;
+    height: 10px;
+    border-width: 5px;
   }
 }
 
@@ -588,8 +604,42 @@ a {
   }
 }
 
-.contacts__map {
+#contact_map {
   height: 335px;
   width: 100%;
+  margin-bottom: 20px;
+}
+
+.contacts__item, .contacts__item a {
+  font-family: 'MullerRegular';
+  color: #333333;
+  font-size: 12px;
+  line-height: 25px;
+}
+
+.contacts__item p, .contacts__item a p {
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  #contact_map {
+    height: 211px;
+    margin-bottom: 30px;
+  }
+  .contacts__item, .contacts__item a {
+    font-size: 10px;
+    line-height: 16px;
+  }
+}
+
+@media (min-width: 992px) {
+  #contact_map {
+    height: 335px;
+    margin-bottom: 50px;
+  }
+  .contacts__item, .contacts__item a {
+    font-size: 16px;
+    line-height: 25px;
+  }
 }
 /*# sourceMappingURL=style.css.map */

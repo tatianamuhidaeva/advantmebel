@@ -1,40 +1,34 @@
 <div class="contacts page">
   <div class="container bg">
     <h1 class="page__title col-12"><span>{.title}{{edit}}</span></h1>
-    <div class="page__breadcrumbs col-12">
-      <?php 
-            foreach (d()->breadcrumbs as $key => $item) {
-              if ($key != 0){
-                echo " / ";
-              } 
-              print "<a href={$item[link]}> {$item[title]}</a>";
-            } 
-          ?>
-    </div>
+{{breadcrumbs}}
   </div>
-  <div class="contacts__map" id="map">
-
-  </div>
+    {{map}}
   <div class="container">
     <div class="row">
 
+        <!-- {{add 'contacts'}} -->
       <foreach Contact>
         <div class="contacts__object col-12 col-md-5">
-          <h2 class="page__subtitle">{.title}</h2>
+          
+          <h2 class="page__subtitle">{.title}{{edit}}{{delete}}</h2>
+          
           <?if (d()->this->address):?>
-          <div class="contacts__address">{.address}</div>
+          <div class="contacts__item contacts__address">{.address}</div>
           <?endif;?>
           <?if (d()->this->phone):?>
-          <div class="contacts__phone">тел.: {.phone}</div>
+          <div class="contacts__item contacts__phone">
+              <a href="tel:+7<?=d()->convert_phone_clean(d()->Option->phone);?>">тел.: {.phone}</a> 
+            </div>
           <?endif;?>
           <?if (d()->this->email):?>
-          <div class="contacts__email">{.email}</div>
+          <div class="contacts__item contacts__email"><a href="mailto:{Option.email}">{.email}</a></div>
           <?endif;?>
           <?if (d()->this->time):?>
-          <div class="contacts__time">{.time}</div>
+          <div class="contacts__item contacts__time">{.time}</div>
           <?endif;?>
           <?if (d()->this->note):?>
-          <div class="contacts__note">{.note}</div>
+          <div class="contacts__item contacts__note">{.note}</div>
           <?endif;?>
         </div>
       </foreach>

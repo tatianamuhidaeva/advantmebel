@@ -17,32 +17,17 @@
 	<meta name="keywords" content="{Seo.keywords|h}" />
 	<?endif;?>
 
-	<!-- <style>
-		<? $css='';
-		$css_arrs=array('/images/css/bootstrap.min.css', '/images/css/style.css');
-
-		foreach($css_arrs as $css_arr) {
-			$css .=str_replace('; ', ';', str_replace(' }', '}', str_replace('{ ', '{', str_replace(array("\r\n", "\r", "\n", "\t", '  ', '    ', '    '), "", preg_replace('!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', file_get_contents($_SERVER['DOCUMENT_ROOT'] . $css_arr))))));
-		}
-
-		echo $css;
-		?>
-	</style> -->
 	<link rel="stylesheet" href="/images/css/normalize.css">
 	<link rel="stylesheet" href="/images/css/bootstrap-grid.css">
 	<link rel="stylesheet" href="/images/css/style.css">
 	<script src="/images/js/jquery-3.3.1.min.js"></script>
-	<?if(url() == 'contacts'):?>
-	<script src="https://api-maps.yandex.ru/2.1/?apikey=123&lang=ru_RU" type="text/javascript">
-		</script>
-		<script src="/images/js/yandex-map.js"></script>
-	<?endif;?>
 	{Option.meta}
 </head>
 
 <body>
 	{{admin_panel}}
 	<div class="page-root">
+
 			{{header}}
 			<div class="content">
 				{{{content}}}

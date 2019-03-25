@@ -1,5 +1,18 @@
-<h1>{.title} {{edit}}</h1>
-{.text}
-
-
-ОШИБКА!!! файл _show.html
+<div class="about page">
+    <div class="container bg">
+      <h1 class="page__title col-12"><span>{.title}{{edit}}</span></h1>
+      <div class="page__breadcrumbs col-12">
+        <?php 
+          foreach (d()->breadcrumbs as $key => $item) {
+            if ($key != 0){
+              echo " / ";
+            } 
+            print "<a href={$item[link]}> {$item[title]}</a>";
+          } 
+        ?>
+      </div>
+      <div class="page__text col-12 col-md-9">
+        {.text}
+      </div>
+    </div>
+  </div>
