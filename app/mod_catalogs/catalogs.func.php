@@ -1,13 +1,8 @@
 <?php
-/*
-	Модуль для работы с текстовыми страницами, для вывода меню, выода подстраниц
-*/
 class CatalogsController
 {
 	function show($url)
 	{
-		// echo $url;
-		// print (d()->Catalog->find_by_url($url));
 		d()->this = d()->Catalog->find_by_url($url);
 		if (d()->this->is_empty) {
 			$mas = array ();
@@ -28,4 +23,3 @@ class CatalogsController
 	}
 }
 
-?>
