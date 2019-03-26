@@ -1,0 +1,153 @@
+.presents
+  &__cards
+    margin: 10px 0
+  &__card
+    margin-bottom: 25px
+    text-align: center
+    &:hover
+      .presents__card-url
+        height: 100%
+    &-url
+      position: absolute
+      z-index: 1
+      display: block
+      height: 0
+      width: 100%
+      bottom: 0
+      left: 0
+      background-image: linear-gradient(to top, rgba($primary-color,1),rgba($primary-color,0)) 
+      
+    &-img
+      width: 130px
+      height: 99px
+      text-align: center
+      position: relative
+      margin-bottom: 9px
+      margin-left: auto
+      margin-right: auto
+      img
+        width: 130px
+        height: 99px
+        object-fit: cover
+    &-title
+      display: block
+      +regular
+      color: $text-color
+      font-size: 11px
+      
+  &__slider
+    margin: 30px 0
+    padding: 0 36px
+    &-item
+      &-url
+        position: absolute
+        z-index: 1
+        display: block
+        height: 100%
+        width: 100%
+        bottom: 0
+        left: 0
+      &-img
+        width: 215px
+        height: 163px
+        margin-left: auto
+        margin-right: auto
+        margin-bottom: 15px
+        position: relative
+        img
+          width: 215px
+          height: 163px
+          object-fit: cover
+      &-text
+        width: 215px
+        margin-left: auto
+        margin-right: auto
+      &-title
+        display: block
+        +medium
+        color: $text-color
+        font-size: 18px
+        line-height: 30px
+      &-price
+        display: block
+        +light
+        color: #858585
+        font-size: 14px
+        line-height: 30px
+
+@media (min-width: $md)
+  .presents
+    &__cards
+      margin: 20px 0
+    &__card
+      margin-bottom: 0
+      &-img
+        width: 157px
+        height: 126px
+        img
+          width: 157px
+          height: 126px
+        &-add
+          width: 96px
+          height: 104px
+          img
+            width: 96px
+            height: 104px
+      &-title
+        font-size: 10px
+    &__slider
+      padding: 0
+      &-item
+        &-img
+          width: 158px
+          height: 126px
+          margin-bottom: 15px
+          img
+            width: 158px
+            height: 126px
+        &-text
+          width: 158px
+        &-title
+          font-size: 12px
+          line-height: 19px
+        &-price
+          font-size: 9px
+          line-height: 19px
+
+@media (min-width: $lg)
+  .presents
+    &__cards
+      margin: 35px 0
+    &__card
+      &-img
+        width: 230px
+        height: 200px
+        img
+          width: 230px
+          height: 200px
+        &-add
+          width: 96px
+          height: 104px
+          img
+            width: 96px
+            height: 104px
+      &-title
+        font-size: 16px
+    &__slider
+      margin: 50px 0
+      &-item
+        &-img
+          width: 230px
+          height: 200px
+          img
+            width: 230px
+            height: 200px
+        &-text
+          width: 230px
+        &-title
+          font-size: 18px
+          line-height: 30px
+        &-price
+          font-size: 14px
+          line-height: 30px
+

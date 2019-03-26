@@ -1,0 +1,84 @@
+.advanges
+  padding: 20px 0
+  &__card
+    display: flex
+    align-cards: center
+    justify-content: flex-start
+    margin-bottom: 25px
+    &:last-of-type
+      margin-bottom: 10px
+    &-img
+      margin-right: 20px
+      img
+        width: 49px
+    &-text
+      +regular
+      color: #38313f
+      font-size: 12px
+  &-about
+    padding: 0
+    &__text
+      +regular
+      color: #38313f
+      font-size: 12px
+
+@media (min-width: $md)
+  .advanges
+    padding: 50px 0 70px
+    background:
+      repeat: no-repeat 
+      image: url('../img/ellips-gray.png'), url('../img/ellips-gray.png'), url('../img/main/shadow-bg.png')
+      size: 334px, 334px, 190px auto
+      position: calc(50% - 330px) 20px, calc(50% + 350px) 170px, calc(50% + 45px) 170px
+    &__cards
+      margin-top: 30px
+      margin-bottom: 30px
+    &__card
+      margin-bottom: 0
+      &-img
+        margin-right: 15px
+        img
+          width: 33px
+      &-text
+        width: 115px
+        font-size: 10px
+    &-about
+      font-size: 10px
+      line-height: 19px
+      &__img
+        position: relative
+        img
+          width: 287px
+      &__logo
+        position: absolute
+        top: -70px
+        left: 115px
+        width: 63px
+
+@media (min-width: $lg)
+  .advanges
+    padding: 80px 0 110px
+    background:
+      size: 530px, 530px, 250px auto
+      position: calc(50% - 500px) 40px, calc(50% + 500px) 260px, calc(50% + 45px) 350px
+    &__cards
+      margin-top: 80px
+      margin-bottom: 80px
+    &__card
+      &-img
+        img
+          width: 52px
+      &-text
+        width: 180px
+        font-size: 16px
+    &-about
+      font-size: 16px
+      line-height: 30px
+      &__img
+        img
+          width: 460px
+      &__logo
+        top: -70px
+        left: 115px
+        width: 100px
+          

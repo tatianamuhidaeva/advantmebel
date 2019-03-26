@@ -1,0 +1,53 @@
+.main
+  // height: 321px
+  background:
+    image: url('../img/main/main-bg.png')
+    repeat: no-repeat
+    size: auto 100%
+    position: 25% 0
+  &-bg
+    padding: 120px 15px 50px
+  &__title
+    +light
+    color: $text-color
+    font-size: 24px
+    text-transform: uppercase
+    font-weight: 300
+    margin-bottom: 20px
+    span
+      display: block
+      +regular
+      font-size: 11px
+      text-transform: lowercase
+      margin-top: 10px
+      
+@media (min-width: $md)
+  .main
+    // height: 404px
+    background:
+      position: 50% 0
+    &-bg
+      padding: 147px 15px 60px
+      background:
+        image: url('../img/ellips-white_main.png'), url('../img/line-white_main.png'), url('../img/line-white_main.png'), url('../img/line-white_main.png'), url('../img/line-white_main.png'), url('../img/line-white-hor_main.png')
+        repeat: no-repeat
+        size: 334px, auto 100%, auto 100%, auto 100%, auto 100%, auto
+        position: 80% 45px, 15px 0, 33% 0, 67% 0, 100% 0, 80% 218px 
+    &__title
+      font-size: 36px
+      margin-bottom: 30px
+      span
+        font-size: 12px
+@media (min-width: $lg)
+  .main
+    // height: 640px
+    &-bg
+      padding: 237px 15px 87px
+      background:
+        size: 518px, auto 100%, auto 100%, auto 100%, auto 100%, auto
+        position: 89% 71px, 15px 0, 33% 0, 69% 0, 100% 0, 80% 343px
+    &__title
+      font-size: 60px
+      margin-bottom: 46px
+      span
+        font-size: 18px

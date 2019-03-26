@@ -1,4 +1,107 @@
-Главная страница
-
-{Option.title}{{edit}}
-{.title}
+<div class="main">
+  <div class="container main-bg">
+    <h1 class="main__title">Стильные <br> и долговечные
+      <span>мебельные решения для компаний любого уровня</span>
+    </h1>
+    <a href="/catalogs/office_econom" class="btn">Перейти в каталог</a>
+  </div>
+</div>
+<div class="advanges">
+  <div class="container">
+    <h1 class="page__subtitle">{.title}
+      <br><span>{.subtitle}</span></h1>
+    <div class="advanges__cards row">
+      {{add 'advanges'}}{{sort_icon 'advanges'}}
+      <foreach Advange>
+        <div class="advanges__card col-12 col-md-3">
+          <div class="advanges__card-img"><img src="{.image}" alt=""></div>
+          <div class="advanges__card-text">{.text} {{edit}} {{delete}}</div>
+        </div>
+      </foreach>
+    </div>
+    <div class="advanges-about row align-items-center">
+      <div class="advanges-about__text col-12 col-md-7">
+        {.text}
+      </div>
+      <div class="advanges-about__img hidden d-none d-md-block col-md-5">
+        <img src="/images/img/main/main-about.png" alt="">
+        <div class="advanges-about__logo">
+          <img src="/images/img/logo-brown.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="presents page">
+  <div class="container bg">
+    <div class="page__subtitle">Наша продукция</div>
+    {{add 'catalogs'}}
+    <div class="presents__cards row">
+      <? d()->catalogs = d()->Catalog;
+        foreach (d()->catalogs->order_by('id')->where('catalog_id = 0')->limit(4) as d()->this) {?>
+      <div class="presents__card col-6 col-md-3">
+        <div class="presents__card-img">
+          <img src="{.image}" alt="">
+          <a class="presents__card-url" href="/catalogs/{.url}"></a>
+        </div>
+        <div class="presents__card-text">
+            <a href="/catalogs/{.url}">{.title}</a>{{edit}}{{delete}}
+        </div>
+      </div>
+      <? } ?>
+    </div>
+    <div class="page__subtitle">А так же:</div>
+    {{add 'catalogs'}}
+    <div class="presents__cards row">
+      <? d()->catalogs = d()->Catalog;
+        foreach (d()->catalogs->order_by('id')->where('catalog_id = 0')->limit(4,10) as d()->this) {?>
+      <div class="presents__card col-6 col-md-2">
+        <div class="presents__card-img presents__card-img-add">
+          <img src="{.image}" alt="">
+          <a class="presents__card-url" href="/catalogs/{.url}"></a>
+        </div>
+        <div class="presents__card-text">
+            <a href="/catalogs/{.url}">{.title}</a>{{edit}}{{delete}}
+        </div>
+      </div>
+      <? } ?>
+    </div>
+    <br>
+    <br>
+    <div class="page__subtitle">Последние новинки</div>
+    {{add 'products'}}
+    <div class="presents__slider">
+      <? d()->products = d()->Product;
+        foreach (d()->products->order_by('id ASC')->limit(10) as d()->this) {?>
+      <div class="presents__slider-item">
+        <div class="presents__slider-item-img">
+          <img src="{.image}" alt="">
+          <a class="presents__slider-item-url" href="/products/{.url}"></a>
+        </div>
+        <div class="presents__slider-item-text">
+            <a class="presents__slider-item-title" href="/products/{.url}">
+              {.title}
+            </a>{{edit}}{{delete}}
+            <a class="presents__slider-item-price" href="/products/{.url}">Стоимость комплекта: {.price}</a>
+        </div>
+      </div>
+      <? } ?>
+    </div>
+    <div class="page__subtitle">Новости</div>
+    {{add 'news'}}
+    <div class="presents-news row">
+      <? d()->news = d()->News;
+        foreach (d()->news->order_by('date_at ASC')->limit(3) as d()->this) {?>
+      <div class="presents-news__item col-12 col-md-4">
+        <div class="presents-news__item-date">{.date_at}</div>
+        <div class="presents-news__item-title">
+            <a href="/news/{.url}">{.title}</a>{{edit}}{{delete}}
+        </div>
+        <div class="presents-news__item-text">
+          {.short_text}
+        </div>
+      </div>
+      <? } ?>
+    </div>
+  </div>
+</div>

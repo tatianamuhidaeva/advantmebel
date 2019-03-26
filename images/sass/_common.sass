@@ -13,6 +13,7 @@ body
 a
   text-decoration: none
   color: inherit
+  transition-duration: 0.4s
 
 .page
   padding: 45px 0
@@ -38,6 +39,9 @@ a
     color: $text-color
     font-size: 18px
     margin-bottom: 20px
+    span
+      +light
+      font-size: 12px
   &__breadcrumbs
     +regular
     color: #aeaeae
@@ -64,29 +68,7 @@ a
   vertical-align: -15%
   
 
-
-.btn
-  display: inline-block
-  border: 0
-  outline: none
-  border-radius: 10px
-  background-color: #ffffff 
-  padding: 0 14px
-  text-align: center
-  height: 20px
-  +regular
-  font-size: 9px
-  color: #2a262c
-  line-height: 20px
-  cursor: pointer
-  &:focus
-    outline: none
-  
 @media (min-width: $md)
-  .btn
-    height: 23px  
-    border-radius: 11px
-    padding: 0 14px
   .page
     padding: 55px 0
     &__title
@@ -115,15 +97,11 @@ a
       left: 0
       z-index: -1
       background:
-        image: url('../img/ellips_brown.png'), url('../img/line_bg.png'), url('../img/line_bg.png'), url('../img/line_bg.png'), url('../img/line_bg.png')
+        image: url('../img/ellips-brown.png'), url('../img/line-brown_bg.png'), url('../img/line-brown_bg.png'), url('../img/line-brown_bg.png'), url('../img/line-brown_bg.png')
         repeat: no-repeat
         size: 334px 334px, auto 100%, auto 100%, auto 100%, auto 100%
         position: 80% 55px, 15px 0, 33% 0, 66% 0, 100% 0 
 @media (min-width: $lg)
-  .btn
-    height: 35px  
-    border-radius: 18px
-    padding: 0 25px
   .page
     padding: 80px 0
     &__title
@@ -135,6 +113,8 @@ a
     &__subtitle
       font-size: 22px
       margin-bottom: 45px
+      span
+        font-size: 20px
     &__breadcrumbs
       font-size: 14px
       margin-bottom: 60px

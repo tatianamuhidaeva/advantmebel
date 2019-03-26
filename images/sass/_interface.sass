@@ -1,0 +1,92 @@
+
+.btn
+  display: inline-block
+  border: 0
+  outline: none
+  border-radius: 19px
+  background-color: $primary-color
+  padding: 0 40px
+  text-align: center
+  height: 38px
+  +bold
+  font-size: 11px
+  color: #2a262c
+  line-height: 38px
+  cursor: pointer
+  &:focus
+    outline: none
+  &-o
+    border-radius: 10px
+    background-color: #ffffff 
+    padding: 0 14px
+    height: 20px
+    line-height: 20px
+    +regular
+    font-size: 9px
+  
+.slick-arrow
+  position: absolute
+  top: 60px
+  width: 21px
+  height: 37px
+  background: 
+    repeat: no-repeat
+    position: 0 0
+    size: 21px 37px
+  cursor: pointer
+  z-index: 2
+  &-prev
+    left: 0
+    background-image: url('../img/arrow-prev.png')
+  &-next
+    right: 0
+    background-image: url('../img/arrow-next.png')
+
+@media (min-width: $md)
+  .btn
+    height: 38px  
+    line-height: 38px
+    border-radius: 19px
+    padding: 0 40px
+    font-size: 12px
+    &-o
+      height: 23px  
+      line-height: 23px
+      border-radius: 11px
+      padding: 0 14px
+      font-size: 9px
+  .slick-arrow
+    top: -55px
+    left: auto
+    width: 14px
+    height: 25px
+    background: 
+      size: 14px 25px
+    &-prev
+      right: 35px
+    &-next
+      right: 0
+@media (min-width: $lg)
+  .btn
+    height: 62px  
+    line-height: 62px
+    border-radius: 31px
+    padding: 0 68px
+    font-size: 18px
+    &-o
+      height: 35px  
+      line-height: 35px
+      border-radius: 18px
+      padding: 0 25px
+      font-size: 14px
+  .slick-arrow
+    top: -55px
+    left: auto
+    width: 21px
+    height: 37px
+    background: 
+      size: 21px 37px
+    &-prev
+      right: 65px
+    &-next
+      right: 0
