@@ -93,7 +93,7 @@
       <? d()->news = d()->News;
         foreach (d()->news->order_by('date_at ASC')->limit(3) as d()->this) {?>
       <div class="presents-news__item col-12 col-md-4">
-        <div class="presents-news__item-date">{.date_at}</div>
+        <div class="presents-news__item-date">{.date_at|userdate}</div>
         <div class="presents-news__item-title">
             <a href="/news/{.url}">{.title}</a>{{edit}}{{delete}}
         </div>

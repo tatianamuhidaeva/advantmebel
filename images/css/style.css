@@ -978,6 +978,29 @@ a {
   line-height: 30px;
 }
 
+.presents-news__item {
+  margin-bottom: 37px;
+}
+
+.presents-news__item-date {
+  font-family: 'MullerLight';
+  color: #858585;
+  font-size: 12px;
+}
+
+.presents-news__item-title {
+  font-family: 'MullerMedium';
+  color: #333333;
+  font-size: 14px;
+}
+
+.presents-news__item-text {
+  font-family: 'MullerLight';
+  color: #333333;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
 @media (min-width: 768px) {
   .presents__cards {
     margin: 20px 0;
