@@ -1,9 +1,9 @@
 <div class="main">
   <div class="container main-bg">
-    <h1 class="main__title">Стильные <br> и долговечные
-      <span>мебельные решения для компаний любого уровня</span>
+    <h1 class="main__title">{Option.banner_title}
+      <span>{Option.banner_subtitle}</span>
     </h1>
-    <a href="/catalogs/office_econom" class="btn">Перейти в каталог</a>
+    <a href="{Option.banner_btn_url}" class="btn">{Option.banner_btn_text}</a>
   </div>
 </div>
 <div class="advanges">
@@ -15,7 +15,7 @@
       <foreach Advange>
         <div class="advanges__card col-12 col-md-3">
           <div class="advanges__card-img"><img src="{.image}" alt=""></div>
-          <div class="advanges__card-text">{.text} {{edit}} {{delete}}</div>
+          <div class="advanges__card-text">{.text}{{edit}}{{delete}}</div>
         </div>
       </foreach>
     </div>
@@ -24,7 +24,7 @@
         {.text}
       </div>
       <div class="advanges-about__img hidden d-none d-md-block col-md-5">
-        <img src="/images/img/main/main-about.png" alt="">
+        <img src="/images/img/main/main-about.jpg" alt="">
         <div class="advanges-about__logo">
           <img src="/images/img/logo-brown.png" alt="">
         </div>
@@ -37,24 +37,23 @@
     <div class="page__subtitle">Наша продукция</div>
     {{add 'catalogs'}}
     <div class="presents__cards row">
-      <? d()->catalogs = d()->Catalog;
-        foreach (d()->catalogs->order_by('id')->where('catalog_id = 0')->limit(4) as d()->this) {?>
-      <div class="presents__card col-6 col-md-3">
-        <div class="presents__card-img">
-          <img src="{.image}" alt="">
-          <a class="presents__card-url" href="/catalogs/{.url}"></a>
+      <foreach Catalog->order_by('id')->where('is_main1 = 1')>
+        <div class="presents__card col-6 col-md-3">
+          <div class="presents__card-img">
+            <img src="{.image}" alt="">
+            <a class="presents__card-url" href="/catalogs/{.url}"></a>
+          </div>
+          <div class="presents__card-text">
+              <a href="/catalogs/{.url}">{.title}</a>{{edit}}{{delete}}
+          </div>
         </div>
-        <div class="presents__card-text">
-            <a href="/catalogs/{.url}">{.title}</a>{{edit}}{{delete}}
-        </div>
-      </div>
-      <? } ?>
+      </foreach>
     </div>
     <div class="page__subtitle">А так же:</div>
     {{add 'catalogs'}}
     <div class="presents__cards row">
       <? d()->catalogs = d()->Catalog;
-        foreach (d()->catalogs->order_by('id')->where('catalog_id = 0')->limit(4,10) as d()->this) {?>
+        foreach (d()->catalogs->order_by('id')->where('is_main2 = 1') as d()->this) {?>
       <div class="presents__card col-6 col-md-2">
         <div class="presents__card-img presents__card-img-add">
           <img src="{.image}" alt="">
@@ -72,7 +71,7 @@
     {{add 'products'}}
     <div class="presents__slider">
       <? d()->products = d()->Product;
-        foreach (d()->products->order_by('id ASC')->limit(10) as d()->this) {?>
+        foreach (d()->products->order_by('id DESC')->where('is_main = 1') as d()->this) {?>
       <div class="presents__slider-item">
         <div class="presents__slider-item-img">
           <img src="{.image}" alt="">
@@ -91,7 +90,7 @@
     {{add 'news'}}
     <div class="presents-news row">
       <? d()->news = d()->News;
-        foreach (d()->news->order_by('date_at ASC')->limit(3) as d()->this) {?>
+        foreach (d()->news->order_by('date_at DESC')->limit(3) as d()->this) {?>
       <div class="presents-news__item col-12 col-md-4">
         <div class="presents-news__item-date">{.date_at|userdate}</div>
         <div class="presents-news__item-title">

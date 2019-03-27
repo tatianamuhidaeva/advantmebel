@@ -15,11 +15,21 @@
           <div class="header__toggle-elem"></div>
         </button>
         <div class="header-navbar__list d-md-flex">
-          <a href="#" class="header-navbar__item">Каталог &nbsp; <div class="arrow-down"></div></a>
+          <a href="#" class="header-navbar__item header__toggle-catalog">Каталог &nbsp; <div class="header-navbar__item-arrow"></div></a>
           <a href="/about" class="header-navbar__item">О компании</a>
           <a href="/contacts" class="header-navbar__item">Контакты</a>
         </div>
       </nav>
     </div>
+            <div class="header-navbar__dropdown d-none">
+              <div class="container header-navbar__dropdown-wrap">
+                <foreach Catalog>
+                  <div class="header-navbar__dropdown-item">
+                    <a href="/catalogs/{.url}">{.title}</a>
+                  </div>
+                </foreach>
+
+              </div>
+            </div>
   </div>
 </header>

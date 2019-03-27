@@ -1,4 +1,12 @@
-
+.input
+  height: 37px
+  border: 1px solid #d0aa58
+  outline: none
+  padding: 0 12px
+  +regular
+  color: $text-color
+  font-size: 12px
+  line-height: 37px
 .btn
   display: inline-block
   border: 0
@@ -12,7 +20,8 @@
   font-size: 11px
   color: #2a262c
   line-height: 38px
-  cursor: pointer
+  &:hover
+    cursor: pointer
   &:focus
     outline: none
   &-o
@@ -33,8 +42,9 @@
     repeat: no-repeat
     position: 0 0
     size: 21px 37px
-  cursor: pointer
   z-index: 2
+  &:hover
+    cursor: pointer
   &-prev
     left: 0
     background-image: url('../img/arrow-prev.png')
@@ -43,6 +53,11 @@
     background-image: url('../img/arrow-next.png')
 
 @media (min-width: $md)
+  .input
+    height: 28px
+    padding: 0 10px
+    font-size: 10px
+    line-height: 28px
   .btn
     height: 38px  
     line-height: 38px
@@ -67,6 +82,11 @@
     &-next
       right: 0
 @media (min-width: $lg)
+  .input
+    height: 45px
+    padding: 0 15px
+    font-size: 16px
+    line-height: 45px
   .btn
     height: 62px  
     line-height: 62px

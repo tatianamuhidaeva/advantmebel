@@ -12,20 +12,18 @@
       </div>
       <div class="footer-offices col-6 offset-md-1 col-md-3">
         <div class="footer__list">
-          <a href="#" class="footer__item">Кабинеты Econom class</a>
-          <a href="#" class="footer__item">Кабинеты Business class</a>
-          <a href="#" class="footer__item">Кабинеты First class</a>
-          <a href="#" class="footer__item">Кабинеты Premium class</a>
+          <? d()->catalogs = d()->Catalog;
+            foreach (d()->catalogs->order_by('id')->where('catalog_id = 0')->limit(4) as d()->this) {?>
+            <a href="/catalogs/{.url}" class="footer__item">{.title}</a>
+          <? } ?>
         </div>
       </div>
       <div class="footer-areas col-6 col-md-3">
         <div class="footer__list">
-          <a href="#" class="footer__item">Зоны коммуникаций</a>
-          <a href="#" class="footer__item">Приемные зоны</a>
-          <a href="#" class="footer__item">Зоны работы сотрудников</a>
-          <a href="#" class="footer__item">Зоны ожидания</a>
-          <a href="#" class="footer__item">Стулья и кресла</a>
-          <a href="#" class="footer__item">Офисный свет</a>
+          <? d()->catalogs = d()->Catalog;
+            foreach (d()->catalogs->order_by('id')->where('catalog_id = 0')->limit(4,10) as d()->this) {?>
+            <a href="/catalogs/{.url}" class="footer__item">{.title}</a>
+          <? } ?>
         </div>
       </div>
       <div class="footer-nav col-6 col-md-2">
@@ -37,13 +35,13 @@
     </div>
     <div class="footer-copyright row">
       <div class="footer-copyright__item col-12  col-md-3">
-          &copy; Компания &laquo;Адвант&raquo;, 2005 - 2019.
+        &copy; Компания &laquo;Адвант&raquo;, 2005 - 2019.
       </div>
       <a href="#" class="footer-copyright__item col-12 offset-md-1  col-md-3">
-          Политика конфиденциальности
+        Политика конфиденциальности
       </a>
       <a href="http://bulgar-promo.ru/" class="footer-copyright__item col-12 offset-md-2  col-md-3" target="_blank">
-          <strong>Разработка сайта</strong> — BulgarPromo
+        <strong>Разработка сайта</strong> — BulgarPromo
       </a>
     </div>
   </div>
