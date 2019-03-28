@@ -16,7 +16,7 @@ $(document).ready(function () {
       $('.content').toggleClass('d-none');
 
     } else {
-      $('.popup').toggleClass('d-flex');
+      $('.popup').removeClass('d-flex');
       $('body').css('overflow', '');
     }
     $('.popup-form').removeClass('d-none');
@@ -28,9 +28,8 @@ $(document).ready(function () {
 
   $(document).on('click', function (e) {
     if ($(window).outerWidth(true) >= md) {
-      if (!($(e.target).hasClass('popup-wrap')) &&
-        !($(e.target).parents('.popup-wrap').length) &&
-        !($(e.target).hasClass('header-callback__btn'))) {
+      if (($(e.target).hasClass('popup')) &&
+        !($(e.target).parents('.popup-wrap').length)) {
         closeModal();
       }
     }

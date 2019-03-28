@@ -21,15 +21,15 @@
         </div>
       </nav>
     </div>
-            <div class="header-navbar__dropdown d-none">
-              <div class="container header-navbar__dropdown-wrap">
-                <foreach Catalog>
-                  <div class="header-navbar__dropdown-item">
-                    <a href="/catalogs/{.url}">{.title}</a>
-                  </div>
-                </foreach>
-
-              </div>
-            </div>
   </div>
 </header>
+                <div class="header-navbar__dropdown">
+                  <div class="container header-navbar__dropdown-wrap">
+                    <foreach Catalog>
+                      <div class="header-navbar__dropdown-item">
+                        <a href="/catalogs/{.url}">{.title}</a>
+                      </div>
+                    </foreach>
+    
+                  </div>
+                </div>

@@ -59,13 +59,11 @@
       font-size: 14px
       text-decoration: none
     &__dropdown
-      position: absolute
-      top: 73px
-      left: 0
+      display: none
       width: 100%
       padding: 20px 15px 50px
       background-color: $bg-light-color
-      z-index: 10
+      z-index: 90
       &-wrap
         display: flex
         flex-direction: column
@@ -117,8 +115,9 @@
           vertical-align: 2%
           transition-duration: 0.2s
       &__dropdown
+        position: absolute
         top: 63px
-        left: 28%
+        left: calc(50% - 188px)
         width: 390px
         padding: 22px 21px 30px
         &-wrap
@@ -147,6 +146,7 @@
             size: 10px 5px
           vertical-align: 9%
       &__dropdown
+        left: calc(50% - 295px)
         width: 600px
         padding: 33px 33px 45px
         &-item

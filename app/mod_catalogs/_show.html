@@ -1,8 +1,31 @@
 <div class="catalog page">
   <div class="container bg">
-    <h1 class="page__title col-12"><span></span></h1>
+    <h1 class="page__title col-12"><span>{.title}</span></h1>
     {{breadcrumbs}}
-    <div class="hidden col-md-3"></div>
+    <div class="hidden col-md-3">
+      <div class="catalog__list">
+        <h3 class="catalog__subtitle"></h3>
+        <foreach Catalog>
+          <div class="catalog__item">{.title}</div>
+        </foreach>
+      </div>
+      <div class="catalog__news">
+        <h3 class="catalog__subtitle"></h3>
+        <foreach News>
+            <foreach News->order_by('date_at DESC')->limit(3)>
+                <div class="presents-news__item col-12 col-md-4">
+                  <div class="presents-news__item-date">{.date_at|userdate}</div>
+                  <div class="presents-news__item-title">
+                      <a href="/news/{.url}">{.title}</a>{{edit}}{{delete}}
+                  </div>
+                  <div class="presents-news__item-text">
+                    {.short_text}
+                  </div>
+                </div>
+              </foreach>
+        </foreach>
+      </div>
+    </div>
     <div class="page__text col-12 col-md-9">
       {.text}
       
