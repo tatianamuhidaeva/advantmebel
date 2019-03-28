@@ -1,6 +1,7 @@
 $(document).ready(function () {
+  var md = 768;
   function openModal() {
-    if ($(window).width() < 768) {
+    if ($(window).outerWidth(true) < md) {
       $('.popup').toggleClass('d-flex');
       $('.content').toggleClass('d-none');
     } else {
@@ -10,7 +11,7 @@ $(document).ready(function () {
   }
 
   function closeModal() {
-    if ($(window).width() < 768) {
+    if ($(window).outerWidth(true) < md) {
       $('.popup').toggleClass('d-flex');
       $('.content').toggleClass('d-none');
 
@@ -26,7 +27,7 @@ $(document).ready(function () {
   $('.popup__close').on('click', closeModal);
 
   $(document).on('click', function (e) {
-    if ($(window).width() >= 768) {
+    if ($(window).outerWidth(true) >= md) {
       if (!($(e.target).hasClass('popup-wrap')) &&
         !($(e.target).parents('.popup-wrap').length) &&
         !($(e.target).hasClass('header-callback__btn'))) {
