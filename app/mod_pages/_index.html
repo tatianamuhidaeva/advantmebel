@@ -89,7 +89,7 @@
     {{add 'news'}}
     <div class="presents-news row">
         <foreach News->order_by('date_at DESC')->limit(3)>
-      <div class="presents-news__item">
+      <div class="presents-news__item col-12 col-md-4">
         <div class="presents-news__item-date">{.date_at|userdate}</div>
         <div class="presents-news__item-title">
             <a href="/news/{.url}">{.title}</a>{{edit}}{{delete}}

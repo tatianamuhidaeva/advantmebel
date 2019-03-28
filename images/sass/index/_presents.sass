@@ -90,7 +90,15 @@
         color: $text-color
         font-size: 12px
         line-height: 1.5
-
+  &__arrow
+    top: 60px
+    width: 21px
+    height: 37px
+    background-size: 21px 37px
+    &-prev
+      left: 0
+    &-next
+      right: 0
 @media (min-width: $md)
   .presents
     &__cards
@@ -129,7 +137,17 @@
         &-price
           font-size: 9px
           line-height: 19px
-
+    &__arrow
+      top: -55px
+      left: auto
+      width: 14px
+      height: 25px
+      background: 
+        size: 14px 25px
+      &-prev
+        right: 35px
+      &-next
+        right: 0
 
 @media (min-width: $lg)
   .presents
@@ -167,4 +185,15 @@
         &-price
           font-size: 14px
           line-height: 30px
+    &__arrow
+      top: -55px
+      left: auto
+      width: 21px
+      height: 37px
+      background: 
+        size: 21px 37px
+      &-prev
+        right: 95px
+      &-next
+        right: 30px
 

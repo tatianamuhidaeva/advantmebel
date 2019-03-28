@@ -1,0 +1,48 @@
+<div class="products page">
+  <div class="container bg">
+    <h1 class="page__title col-12"><span>
+        <?print (d()->Catalog->where('id = ?', d()->this->catalog_id))->title?> 
+        &mdash; {.title}</span></h1>
+    {{breadcrumbs}}
+    <div class="row">
+      <div class="products-sliders col-12 col-md-7">
+        <?if (iam()){?>
+        Изменить карточку товара {{edit}}
+        Добавить фото {{add 'photos','product_id'=>d()->this->id}}
+        <?}?>
+        <div class="products-sliders-main">
+          <div class="products-sliders-main__item">
+            <img src="{.image}" alt="">
+          </div>
+          <foreach Photo->where('product_id =?', d()->this->id)>
+            <div class="products-sliders-main__item">
+              <img src="{.image}" alt="">{{delete}}
+            </div>
+          </foreach>
+        </div>
+        <div class="products-sliders-nav d-none d-md-block">
+          <div class="products-sliders-nav__item">
+            <img src="{.image}" alt="">
+          </div>
+          <foreach Photo->where('product_id =?', d()->this->id)>
+            <div class="products-sliders-nav__item">
+              <img src="{.image}" alt="">
+            </div>
+          </foreach>
+        </div>
+      </div>
+      <div class="products-descr col-12 col-md-5">
+        <h2 class="products__subtitle">Описание</h2>
+        <div class="products__text page__text">{.text}</div>
+        <div class="products-price">
+          <div>
+            Цена комплекта в каталоге
+          </div>
+          <div class="products-price__price">
+            {.price}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

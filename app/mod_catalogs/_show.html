@@ -1,34 +1,78 @@
-<div class="catalog page">
+<div class="catalogs page">
   <div class="container bg">
-    <h1 class="page__title col-12"><span>{.title}</span></h1>
-    {{breadcrumbs}}
-    <div class="hidden col-md-3">
-      <div class="catalog__list">
-        <h3 class="catalog__subtitle"></h3>
-        <foreach Catalog>
-          <div class="catalog__item">{.title}</div>
-        </foreach>
+    <div class="row">
+      <h1 class="page__title col-12"><span>{.title}</span></h1>
+      {{breadcrumbs}}
+      <div class="hidden d-none d-md-block col-md-3">
+        <div class="catalogs__items">
+          <h3 class="catalogs__subtitle">Каталог{{add 'catalogs'}}</h3>
+          <foreach Catalog>
+            <a href="/catalogs/{.url}" class="catalogs__item">{.title}{{edit}}{{delete}}</a>
+          </foreach>
+        </div>
+        <div class="catalogs-news">
+          <h3 class="catalogs__subtitle">Новости</h3>
+          <div class="catalogs-news__items">
+          <foreach News->order_by('date_at DESC')->limit(3)>
+            <div class="catalogs-news__item ">
+              <div class="catalogs-news__item-date">{.date_at|userdate}</div>
+              <div class="catalogs-news__item-title">
+                <a href="/news/{.url}">{.title}</a>{{edit}}{{delete}}
+              </div>
+              <div class="catalogs-news__item-text">
+                {.short_text}
+              </div>
+            </div>
+          </foreach>
+          </div>
+        </div>
       </div>
-      <div class="catalog__news">
-        <h3 class="catalog__subtitle"></h3>
-        <foreach News>
-            <foreach News->order_by('date_at DESC')->limit(3)>
-                <div class="presents-news__item col-12 col-md-4">
-                  <div class="presents-news__item-date">{.date_at|userdate}</div>
-                  <div class="presents-news__item-title">
-                      <a href="/news/{.url}">{.title}</a>{{edit}}{{delete}}
-                  </div>
-                  <div class="presents-news__item-text">
-                    {.short_text}
-                  </div>
-                </div>
-              </foreach>
-        </foreach>
+      <div class="catalogs-container col-12 col-md-9">
+        <div class="catalogs__text">{.text}{{edit}}</div>
+        <?$child_id = d()->this->id; ?>
+        
+        <?if (iam()) { ?> 
+          Добавить подкатегорию {{add 'catalogs', 'catalog_id' => $child_id}}  
+          <br>
+        <?}?>
+
+        <div class="catalogs-subcatalogs__items row">
+            <foreach Catalog->where('catalog_id = ?',$child_id)->order_by('is_main1 DESC')>
+          <div class="catalogs-products__item col-6 col-md-4">
+            <div class="catalogs-products__item-img">
+              <img src="{.image}" alt="">
+              <a class="catalogs-products__item-url" href="/catalogs/{.url}"></a>
+            </div>
+            <div class="catalogs-products__item-text">
+                <a class="catalogs-products__item-title" href="/catalogs/{.url}">
+                  {.title}
+                </a>{{edit}}{{delete}}
+            </div>
+          </div>
+          </foreach>
+        </div>
+
+        <?if (iam()) { ?> 
+          Добавить товар  {{add 'products', 'catalog_id' => $child_id}}  
+          <br>
+        <?}?>
+        <div class="catalogs-products__items row">
+            <foreach Product->where('catalog_id = ?',$child_id)->order_by('is_main DESC')>
+          <div class="catalogs-products__item col-6 col-md-4">
+            <div class="catalogs-products__item-img">
+              <img src="{.image}" alt="">
+              <a class="catalogs-products__item-url" href="/products/{.url}"></a>
+            </div>
+            <div class="catalogs-products__item-text">
+                <a class="catalogs-products__item-title" href="/products/{.url}">
+                  {.title}
+                </a>{{edit}}{{delete}}
+                <a class="catalogs-products__item-price" href="/products/{.url}">Стоимость комплекта: {.price}</a>
+            </div>
+          </div>
+          </foreach>
+        </div>
       </div>
-    </div>
-    <div class="page__text col-12 col-md-9">
-      {.text}
-      
     </div>
   </div>
 </div>

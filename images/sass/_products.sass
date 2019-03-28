@@ -1,0 +1,51 @@
+.products
+  &-sliders
+    margin-bottom: 20px
+    &-main
+      &__item
+        width: 100%
+    &-nav
+      padding: 0 20px
+  &__subtitle
+    +bold
+    color: #aeaeae
+    font-size: 14px
+    margin-top: 0
+  &__text
+    margin-bottom: 30px
+  &-price
+    +bold
+    color: $text-color
+    font-size: 14px
+    margin-bottom: 15px
+    &__price
+      display: inline-block
+      background-color: #ff4646
+      padding: 10px 30px
+      +bold
+      color: #ffffff
+      font-size: 16px
+  &__arrow
+    top: 50%
+    transform: translateY(-50%)
+    width: 15px
+    height: 27px
+    background-size: 15px 27px
+    &-prev
+      left: 15px
+    &-next
+      right: 15px
+
+@media (min-width: $md)
+  .products
+    &__arrow
+      &-prev
+        left: 0
+      &-next
+        right: 0
+@media (min-width: $lg)
+  .products
+    &__arrow
+      width: 20px
+      height: 39px
+      background-size: 20px 39px
