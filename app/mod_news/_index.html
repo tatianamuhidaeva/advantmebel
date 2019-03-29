@@ -1,0 +1,23 @@
+<div class="news page">
+  <div class="container bg">
+    <h1 class="page__title"><span>{.title}</span></h1>
+    {{breadcrumbs}}
+    <div class="news__list col-12 col-md-8 p-0">
+      <foreach news>
+        <div class="news__card">
+          <div class="news__card-img">
+            <img src="{.image}" alt="">
+          </div>
+          <div class="news__card-info">
+            {{one_news}}
+          </div>
+        </div>
+      </foreach>
+      <?php if (d()->paginator != '') { ?>
+      <div class="news-paginator">
+        {paginator}
+      </div>
+      <?php } ?>
+    </div>
+  </div>
+</div>

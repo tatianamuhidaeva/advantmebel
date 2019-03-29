@@ -14,3 +14,155 @@
   background:
     repeat: no-repeat 
   // z-index: -1
+
+=catalogs__item($mb, $mbi, $wi, $hi, $fs-title)
+  .catalogs
+    &__item
+      margin-bottom: $mb
+      &:hover
+        .catalogs__item-url
+          height: 100%
+      &-url
+        position: absolute
+        z-index: 1
+        display: block
+        height: 0
+        width: 100%
+        bottom: 0
+        left: 0
+        background-image: linear-gradient(to top, rgba($primary-color,1),rgba($primary-color,0)) 
+        cursor: pointer
+      &-img
+        width: $wi
+        height: $hi
+        margin-left: auto
+        margin-right: auto
+        margin-bottom: $mbi
+        position: relative
+        img
+          width: $wi
+          height: $hi
+          object-fit: cover
+      &-text
+        margin-left: auto
+        margin-right: auto
+        text-align: center
+      &-title
+        display: block
+        +medium
+        color: $text-color
+        font-size: $fs-title
+        line-height: 1.5
+
+=catalogs__item-m($mb,$mbi,$wi, $hi, $fs-title)
+  .catalogs
+    &__item
+      margin-bottom: $mb
+      &-img
+        width: $wi
+        height: $hi
+        margin-bottom: $mbi
+        img
+          width: $wi
+          height: $hi
+      &-text
+        width: $wi
+      &-title
+        font-size: $fs-title
+
+
+=products__item($mb, $mbi, $wi, $hi, $fs-title, $fs-price, $anim)
+  .products
+    &__item
+      margin-bottom: $mb        
+      &:hover
+        .products__item-url
+          height: 100%
+      &-url
+        position: absolute
+        z-index: 1
+        display: block
+        height: if($anim, 0, 100%)
+        width: 100%
+        bottom: 0
+        left: 0
+        background-image: if($anim, linear-gradient(to top, rgba($primary-color,1),rgba($primary-color,0)), none) 
+        cursor: pointer
+      &-img
+        width: $wi
+        height: $hi
+        margin-left: auto
+        margin-right: auto
+        margin-bottom: $mbi
+        position: relative
+        img
+          width: $wi
+          height: $hi
+          object-fit: cover
+      &-text
+        width: $wi
+        margin-left: auto
+        margin-right: auto
+      &-title
+        display: block
+        +medium
+        color: $text-color
+        font-size: $fs-title
+        line-height: 1.5
+      &-price
+        display: block
+        +light
+        color: #858585
+        font-size: $fs-price
+        line-height: 1.5
+
+=products__item-m($mb, $mbi, $wi, $hi, $fs-title, $fs-price)
+  .products
+    &__item
+      margin-bottom: $mb
+      &-img
+        width: $wi
+        height: $hi
+        margin-bottom: $mbi
+        img
+          width: $wi
+          height: $hi
+      &-text
+        width: $wi
+      &-title
+        font-size: $fs-title
+      &-price
+        font-size: $fs-price
+
+=news__item($mb, $fs-date, $fs-title, $fs-text)
+  .news
+    &__item
+      margin-bottom: $mb
+      &-date
+        +light
+        color: #858585
+        font-size: $fs-date
+        line-height: 1.5
+      &-title
+        +medium
+        color: $text-color
+        font-size: $fs-title
+      &-text
+        +light
+        color: $text-color
+        font-size: $fs-text
+        line-height: 1.5
+        p
+          // margin: 3px 0
+
+
+=news__item-m($mb, $fs-date, $fs-title, $fs-text)
+  .news
+    &__item
+      margin-bottom: $mb
+      &-date
+        font-size: $fs-date
+      &-title
+        font-size: $fs-title
+      &-text
+        font-size: $fs-text

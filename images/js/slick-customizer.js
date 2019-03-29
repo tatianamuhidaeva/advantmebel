@@ -52,7 +52,9 @@ $(document).ready(function(){
     prevArrow: '<div class="slick-arrow slick-arrow-prev products__arrow products__arrow-prev"></div>',
     nextArrow: '<div class="slick-arrow slick-arrow-next products__arrow products__arrow-next"></div>',
     asNavFor: '.products-sliders-main',
-    focusOnSelect: true
+    focusOnSelect: true,
+    centerMode: true,
+    centerPadding: '0px'
   });
   
 });

@@ -14,7 +14,15 @@
           <h3 class="catalogs-menu__subtitle">Новости</h3>
           <div class="catalogs-menu-news__items">
             <foreach News->order_by('date_at DESC')->limit(3)>
-              {{one_news}}
+              <div class="catalogs-menu-news__item ">
+                <div class="catalogs-menu-news__item-date">{.date_at|userdate}</div>
+                <div class="catalogs-menu-news__item-title">
+                  <a href="/news/{.url}">{.title}</a>{{edit}}{{delete}}
+                </div>
+                <div class="catalogs-menu-news__item-text">
+                  {.short_text}
+                </div>
+              </div>
             </foreach>
           </div>
         </div>

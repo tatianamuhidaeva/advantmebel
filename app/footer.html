@@ -12,24 +12,23 @@
       </div>
       <div class="footer-offices col-6 offset-md-1 col-md-3">
         <div class="footer__list">
-          <? d()->catalogs = d()->Catalog;
-            foreach (d()->catalogs->order_by('id')->where('catalog_id = 0')->limit(4) as d()->this) {?>
+            <foreach Catalog->order_by('id')->where('is_main1 = 1')>
             <a href="/catalogs/{.url}" class="footer__item">{.title}</a>
-          <? } ?>
+          </foreach>
         </div>
       </div>
       <div class="footer-areas col-6 col-md-3">
         <div class="footer__list">
-          <? d()->catalogs = d()->Catalog;
-            foreach (d()->catalogs->order_by('id')->where('catalog_id = 0')->limit(4,10) as d()->this) {?>
+            <foreach Catalog->order_by('id')->where('is_main2 = 1')>
             <a href="/catalogs/{.url}" class="footer__item">{.title}</a>
-          <? } ?>
+          </foreach>
         </div>
       </div>
       <div class="footer-nav col-6 col-md-2">
         <div class="footer__list">
           <a href="/about" class="footer__item">О компании</a>
           <a href="/contacts" class="footer__item">Контакты</a>
+          <a href="/news" class="footer__item">Новости</a>
         </div>
       </div>
     </div>

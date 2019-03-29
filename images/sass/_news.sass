@@ -1,0 +1,77 @@
+.news
+  .page__breadcrumbs
+    padding: 0
+  &__card
+    display: flex
+    align-items: flex-start
+    margin-bottom: 15px
+    &-img
+      flex-basis: 129px
+      height: 75px
+      margin-right: 10px
+      text-align: right
+      img
+        width: 129px
+        height: 75px
+        object-fit: cover
+    &-info
+      flex-basis: 51%
+      text-align: left
+      +news__item(0,10px,12px,9px)
+  &-paginator
+    display: flex
+    margin-top: 10px
+    a
+      display: block
+      width: 21px
+      height: 21px
+      +bold
+      color: $text-color
+      font-size: 10px
+      line-height: 21px
+      text-align: center
+      &.active
+        background-color: #c58157
+        color: #ffffff
+    
+@media (min-width: $md)
+  .news
+    &__card
+      &-img
+        flex-basis: 158px
+        height: 95px
+        margin-right: 30px
+        img
+          width: 158px
+          height: 95px
+      &-info
+        flex-basis: 51%
+        text-align: left
+    &-paginator
+      margin-top: 35px
+      a
+        width: 30px
+        height: 30px
+        font-size: 13px
+        line-height: 30px
+@media (min-width: $lg)
+  .news
+    &__card
+      margin-bottom: 20px
+      &-img
+        flex-basis: 263px
+        height: 150px
+        margin-right: 30px
+        img
+          width: 263px
+          height: 150px
+      &-info
+        +news__item-m(0,12px,18px,14px)
+    &-paginator
+      margin-top: 50px
+      a
+        width: 35px
+        height: 35px
+        font-size: 15px
+        line-height: 35px
+  

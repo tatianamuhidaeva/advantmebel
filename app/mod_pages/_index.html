@@ -38,67 +38,39 @@
     {{add 'catalogs'}}
     <div class="presents__cards row">
       <foreach Catalog->order_by('id')->where('is_main1 = 1')>
-        <div class="presents__card col-6 col-md-3">
-          <div class="presents__card-img">
-            <img src="{.image}" alt="">
-            <a class="presents__card-url" href="/catalogs/{.url}"></a>
-          </div>
-          <div class="presents__card-text">
-              <a href="/catalogs/{.url}">{.title}</a>{{edit}}{{delete}}
-          </div>
+        <div class="col-6 col-md-3">
+            {{one_catalog}}
         </div>
       </foreach>
     </div>
     <div class="page__subtitle">А так же:</div>
     {{add 'catalogs'}}
-    <div class="presents__cards row">
-      <? d()->catalogs = d()->Catalog;
-        foreach (d()->catalogs->order_by('id')->where('is_main2 = 1') as d()->this) {?>
-      <div class="presents__card col-6 col-md-2">
-        <div class="presents__card-img presents__card-img-add">
-          <img src="{.image}" alt="">
-          <a class="presents__card-url" href="/catalogs/{.url}"></a>
+    <div class="presents__cards-add row">
+      <foreach Catalog->order_by('id')->where('is_main2 = 1')>
+        <div class="col-6 col-md-2">
+          {{one_catalog}}
         </div>
-        <div class="presents__card-text">
-            <a href="/catalogs/{.url}">{.title}</a>{{edit}}{{delete}}
-        </div>
-      </div>
-      <? } ?>
+      </foreach>
     </div>
     <br>
     <br>
     <div class="page__subtitle">Последние новинки</div>
     {{add 'products'}}
     <div class="presents__slider">
-        <foreach Product->order_by('id DESC')->where('is_main = 1')>
-      <div class="presents__slider-item">
-        <div class="presents__slider-item-img">
-          <img src="{.image}" alt="">
-          <a class="presents__slider-item-url" href="/products/{.url}"></a>
-        </div>
-        <div class="presents__slider-item-text">
-            <a class="presents__slider-item-title" href="/products/{.url}">
-              {.title}
-            </a>{{edit}}{{delete}}
-            <a class="presents__slider-item-price" href="/products/{.url}">Стоимость комплекта: {.price}</a>
-        </div>
-      </div>
+      <foreach Product->order_by('id DESC')->where('is_main = 1')>
+        {{one_product}}
       </foreach>
     </div>
     <div class="page__subtitle">Новости</div>
     {{add 'news'}}
     <div class="presents-news row">
-        <foreach News->order_by('date_at DESC')->limit(3)>
-      <div class="presents-news__item col-12 col-md-4">
-        <div class="presents-news__item-date">{.date_at|userdate}</div>
-        <div class="presents-news__item-title">
-            <a href="/news/{.url}">{.title}</a>{{edit}}{{delete}}
+      <foreach News->order_by('date_at DESC')->limit(3)>
+        <div class="col-12 col-md-4">
+            {{one_news}}
         </div>
-        <div class="presents-news__item-text">
-          {.short_text}
-        </div>
-      </div>
-    </foreach>
+      </foreach>
+      <a href="/news" class="presents-news__all offset-11 col-2 page-text">все новости</a>
     </div>
+    
   </div>
 </div>

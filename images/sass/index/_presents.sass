@@ -1,95 +1,18 @@
 .presents
   &__cards
     margin: 10px 0
-  &__card
-    margin-bottom: 25px
-    text-align: center
-    &:hover
-      .presents__card-url
-        height: 100%
-    &-url
-      position: absolute
-      z-index: 1
-      display: block
-      height: 0
-      width: 100%
-      bottom: 0
-      left: 0
-      background-image: linear-gradient(to top, rgba($primary-color,1),rgba($primary-color,0)) 
-      
-    &-img
-      width: 130px
-      height: 99px
-      text-align: center
-      position: relative
-      margin-bottom: 9px
-      margin-left: auto
-      margin-right: auto
-      img
-        width: 130px
-        height: 99px
-        object-fit: cover
-    &-title
-      display: block
-      +regular
-      color: $text-color
-      font-size: 11px
-      
+    +catalogs__item(25px, 9px, 130px, 99px, 11px)
+
+    &-add
+      +catalogs__item(25px, 9px, 130px, 99px, 11px)
+  
   &__slider
     margin: 30px 0
     padding: 0 36px
-    &-item
-      &-url
-        position: absolute
-        z-index: 1
-        display: block
-        height: 100%
-        width: 100%
-        bottom: 0
-        left: 0
-      &-img
-        width: 215px
-        height: 163px
-        margin-left: auto
-        margin-right: auto
-        margin-bottom: 15px
-        position: relative
-        img
-          width: 215px
-          height: 163px
-          object-fit: cover
-      &-text
-        width: 215px
-        margin-left: auto
-        margin-right: auto
-      &-title
-        display: block
-        +medium
-        color: $text-color
-        font-size: 18px
-        line-height: 30px
-      &-price
-        display: block
-        +light
-        color: #858585
-        font-size: 14px
-        line-height: 30px
+    +products__item(0, 15px, 215px, 163px, 18px, 14px, false)
+  
   &-news
-    &__item
-      margin-bottom: 37px
-      &-date
-        +light
-        color: #858585
-        font-size: 12px
-      &-title
-        +medium
-        color: $text-color
-        font-size: 14px
-      &-text
-        +light
-        color: $text-color
-        font-size: 12px
-        line-height: 1.5
+    +news__item(37px, 12px, 14px, 12px)
   &__arrow
     top: 60px
     width: 21px
@@ -103,40 +26,30 @@
   .presents
     &__cards
       margin: 20px 0
-    &__card
-      margin-bottom: 0
-      &-img
-        width: 157px
-        height: 126px
-        img
-          width: 157px
-          height: 126px
-        &-add
-          width: 96px
-          height: 104px
-          img
-            width: 96px
-            height: 104px
-      &-title
-        font-size: 10px
+      +catalogs__item-m(0, 9px, 157px, 126px, 10px)
+      &-add
+        +catalogs__item-m(0, 9px, 96px, 104px, 10px)
     &__slider
       padding: 0
-      &-item
-        &-img
-          width: 158px
-          height: 126px
-          margin-bottom: 15px
-          img
+      +products__item-m(45px,10px,159px, 126px, 12px, 9px)
+
+      .products
+        &__item
+          &-img
             width: 158px
             height: 126px
-        &-text
-          width: 158px
-        &-title
-          font-size: 12px
-          line-height: 19px
-        &-price
-          font-size: 9px
-          line-height: 19px
+            margin-bottom: 15px
+            img
+              width: 158px
+              height: 126px
+          &-text
+            width: 158px
+          &-title
+            font-size: 12px
+            line-height: 19px
+          &-price
+            font-size: 9px
+            line-height: 19px
     &__arrow
       top: -55px
       left: auto
@@ -153,38 +66,27 @@
   .presents
     &__cards
       margin: 35px 0
-    &__card
-      &-img
-        width: 230px
-        height: 200px
-        img
-          width: 230px
-          height: 200px
-        &-add
-          width: 96px
-          height: 104px
-          img
-            width: 96px
-            height: 104px
-      &-title
-        font-size: 16px
+      +catalogs__item-m(0, 9px, 230px, 200px, 16px)
+      &-add
+        +catalogs__item-m(0, 9px, 96px, 104px, 16px)
     &__slider
       margin: 50px 0
-      &-item
-        &-img
-          width: 230px
-          height: 200px
-          img
+      .products
+        &__item
+          &-img
             width: 230px
             height: 200px
-        &-text
-          width: 230px
-        &-title
-          font-size: 18px
-          line-height: 30px
-        &-price
-          font-size: 14px
-          line-height: 30px
+            img
+              width: 230px
+              height: 200px
+          &-text
+            width: 230px
+          &-title
+            font-size: 18px
+            line-height: 30px
+          &-price
+            font-size: 14px
+            line-height: 30px
     &__arrow
       top: -55px
       left: auto
