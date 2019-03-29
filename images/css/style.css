@@ -50,10 +50,14 @@
   font-size: 11px;
   color: #2a262c;
   line-height: 38px;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
 }
 
 .btn:hover {
   cursor: pointer;
+  background-color: #c19a45;
+  color: #2a262c;
 }
 
 .btn:focus {
@@ -260,8 +264,12 @@ body {
 a {
   text-decoration: none;
   color: inherit;
-  -webkit-transition-duration: 0.4s;
-          transition-duration: 0.4s;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+}
+
+a:hover {
+  color: #B68B2E;
 }
 
 .content {
@@ -312,6 +320,10 @@ a {
   color: #aeaeae;
   font-size: 10px;
   margin-bottom: 30px;
+}
+
+.page__breadcrumbs a:hover {
+  color: #999999;
 }
 
 .page__text {
@@ -648,6 +660,11 @@ a {
   background-color: #e9d19c;
   font-family: 'MullerRegular';
   color: #333333;
+}
+
+.footer a:hover {
+  color: #333333;
+  text-decoration: underline;
 }
 
 .footer-main {
@@ -1081,6 +1098,10 @@ a {
   height: 100%;
 }
 
+.presents__cards .catalogs__item:hover .catalogs__item-title {
+  color: #B68B2E;
+}
+
 .presents__cards .catalogs__item-url {
   position: absolute;
   z-index: 1;
@@ -1130,6 +1151,10 @@ a {
 
 .presents__cards-add .catalogs__item:hover .catalogs__item-url {
   height: 100%;
+}
+
+.presents__cards-add .catalogs__item:hover .catalogs__item-title {
+  color: #B68B2E;
 }
 
 .presents__cards-add .catalogs__item-url {
@@ -1186,6 +1211,14 @@ a {
 
 .presents__slider .products__item:hover .products__item-url {
   height: 100%;
+}
+
+.presents__slider .products__item:hover .products__item-title {
+  color: #B68B2E;
+}
+
+.presents__slider .products__item:hover .products__item-price {
+  color: #B68B2E;
 }
 
 .presents__slider .products__item-url {
@@ -1555,6 +1588,10 @@ a {
   height: 100%;
 }
 
+.catalogs .catalogs__item:hover .catalogs__item-title {
+  color: #B68B2E;
+}
+
 .catalogs .catalogs__item-url {
   position: absolute;
   z-index: 1;
@@ -1604,6 +1641,14 @@ a {
 
 .catalogs .products__item:hover .products__item-url {
   height: 100%;
+}
+
+.catalogs .products__item:hover .products__item-title {
+  color: #B68B2E;
+}
+
+.catalogs .products__item:hover .products__item-price {
+  color: #B68B2E;
 }
 
 .catalogs .products__item-url {
