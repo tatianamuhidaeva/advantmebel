@@ -1,0 +1,17 @@
+<div class="catalogs catalogs-all page">
+    <div class="container bg">
+      <h1 class="page__title col-12"><span>{.title}</span>{{edit}}</h1>
+      {{breadcrumbs}}
+      
+      {{add 'catalogs', 'catalog_id' => 0}}
+      {{sort_icon 'catalogs', 'catalog_id' => 0}}
+      <div class=" d-flex justify-content-around flex-wrap p-0">
+          <!-- <div class="catalogs-subcatalogs row"> -->
+            <foreach Catalog->where('catalog_id = 0')>   
+                {{one_catalog}}
+            </foreach>
+            
+          <!-- </div> -->
+      </div>
+    </div>
+  </div>

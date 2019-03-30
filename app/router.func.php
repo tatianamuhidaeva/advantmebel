@@ -5,6 +5,7 @@ route_all();
 route('/error_404', 'error_404');
 route('/', 'pages#');
 route('/contacts', 'pages#contacts');
+route('/catalogs', 'catalogs#index');
 route('/catalogs/', 'catalogs#show');
 route('/products/', 'products#show');
 route('/news', 'news#index');

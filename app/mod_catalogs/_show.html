@@ -1,17 +1,23 @@
 <div class="catalogs page">
   <div class="container bg">
     <div class="row">
-      <h1 class="page__title col-12"><span>{.title}</span></h1>
+      <h1 class="page__title col-12"><span>{.title}</span>{{edit}}</h1>
       {{breadcrumbs}}
       <div class="catalogs-menu hidden d-none d-md-block col-md-3">
         <div class="catalogs-menu__items">
-          <h3 class="catalogs-menu__subtitle">Каталог{{add 'catalogs'}}</h3>
+          <h3 class="catalogs-menu__subtitle">
+            Каталог
+            {{add 'catalogs', 'catalog_id' => 0}}
+            {{sort_icon 'catalogs', 'catalog_id' => 0}}
+          </h3>
           <foreach Catalog>
             <a href="/catalogs/{.url}" class="catalogs-menu__item">{.title}{{edit}}{{delete}}</a>
           </foreach>
         </div>
         <div class="catalogs-menu-news">
-          <h3 class="catalogs-menu__subtitle">Новости</h3>
+          <h3 class="catalogs-menu__subtitle">
+            Новости
+          </h3>
           <div class="catalogs-menu-news__items">
             <foreach News->order_by('date_at DESC')->limit(3)>
               {{one_news}}
@@ -21,14 +27,15 @@
       </div>
       <div class="catalogs-container col-12 col-md-9">
         
-        <div class="catalogs__maintext">{.text}{{edit}}</div>
+        <div class="catalogs__maintext">{.text}</div>
         
         <?$child_id = d()->this->id; ?>
         <?if (iam()) { ?>
           Добавить подкатегорию {{add 'catalogs', 'catalog_id' => $child_id}}<br>
+          Сортировать подкатегории {{sort_icon 'catalogs', 'catalog_id' => $child_id}}<br>
         <?}?>
         <div class="catalogs-subcatalogs row">
-          <foreach Catalog->where('catalog_id = ?',$child_id)->order_by('is_main1 DESC')>   
+          <foreach Catalog->where('catalog_id = ?',$child_id)>   
             <div class="col-6 col-md-4 ">  
               {{one_catalog}}
             </div>
@@ -37,9 +44,10 @@
 
         <?if (iam()) { ?>
           Добавить товар {{add 'products', 'catalog_id' => $child_id}}<br>
+          Сортировать товары {{sort_icon 'products', 'catalog_id' => $child_id}}<br>
         <?};?>
         <div class="catalogs-products__items row">
-          <foreach Product->where('catalog_id = ?',$child_id)->order_by('is_main DESC')>       
+          <foreach Product->where('catalog_id = ?',$child_id)>       
               <div class="col-6 col-md-4 ">  
                   {{one_product}}
               </div>

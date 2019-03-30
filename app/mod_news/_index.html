@@ -1,15 +1,22 @@
 <div class="news page">
   <div class="container bg">
-    <h1 class="page__title"><span>{.title}</span></h1>
+    <h1 class="page__title"><span>{.title}</span>
+      {{add 'news'}}
+    </h1>
     {{breadcrumbs}}
     <div class="news__list col-12 col-md-8 p-0">
       <foreach news>
         <div class="news__card">
+          <?if (d()->this->image != ''){?>
           <div class="news__card-img">
-            <img src="{.image}" alt="">
+            <a href="/news/{.url}">
+              <img src="{{preview d()->this->image, 263, 'auto'}}" alt="">
+            </a>
           </div>
+          <?}?>
           <div class="news__card-info">
             {{one_news}}
+            {{edit}}{{delete}}
           </div>
         </div>
       </foreach>

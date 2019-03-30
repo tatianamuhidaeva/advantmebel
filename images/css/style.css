@@ -345,8 +345,8 @@ a:hover {
 }
 
 .rotate {
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
+  -webkit-transform: scale(1, 0.8) rotate(180deg) !important;
+          transform: scale(1, 0.8) rotate(180deg) !important;
 }
 
 @media (min-width: 768px) {
@@ -545,6 +545,10 @@ a:hover {
   font-size: 14px;
 }
 
+.header-navbar__dropdown-item a:hover {
+  color: #B68B2E;
+}
+
 @media (min-width: 768px) {
   .header-callback {
     -webkit-box-orient: horizontal;
@@ -592,13 +596,13 @@ a:hover {
     display: inline-block;
     width: 6px;
     height: 3px;
-    background-repeat: no-repeat;
-    background-image: url("../img/nav-arrow-down.png");
-    background-position: 0;
-    background-size: 6px 3px;
-    vertical-align: 2%;
-    -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
+    font-size: 6px;
+    -webkit-transform: scale(1, 0.8);
+            transform: scale(1, 0.8);
+    -webkit-transition: -webkit-transform 0.2s;
+    transition: -webkit-transform 0.2s;
+    transition: transform 0.2s;
+    transition: transform 0.2s, -webkit-transform 0.2s;
   }
   .header-navbar__dropdown {
     position: absolute;
@@ -636,6 +640,7 @@ a:hover {
     height: 5px;
     background-size: 10px 5px;
     vertical-align: 9%;
+    font-size: 8px;
   }
   .header-navbar__dropdown {
     left: calc(50% - 295px);
@@ -1127,6 +1132,7 @@ a:hover {
 }
 
 .presents__cards .catalogs__item-img img {
+  max-width: none;
   width: 130px;
   height: 99px;
   -o-object-fit: cover;
@@ -1182,6 +1188,7 @@ a:hover {
 }
 
 .presents__cards-add .catalogs__item-img img {
+  max-width: none;
   width: 130px;
   height: 99px;
   -o-object-fit: cover;
@@ -1245,6 +1252,7 @@ a:hover {
 }
 
 .presents__slider .products__item-img img {
+  max-width: none;
   width: 215px;
   height: 163px;
   -o-object-fit: cover;
@@ -1317,7 +1325,7 @@ a:hover {
     margin: 20px 0;
   }
   .presents__cards .catalogs__item {
-    margin-bottom: 0;
+    margin-bottom: 25px;
   }
   .presents__cards .catalogs__item-img {
     width: 157px;
@@ -1335,7 +1343,7 @@ a:hover {
     font-size: 10px;
   }
   .presents__cards-add .catalogs__item {
-    margin-bottom: 0;
+    margin-bottom: 25px;
   }
   .presents__cards-add .catalogs__item-img {
     width: 96px;
@@ -1359,16 +1367,16 @@ a:hover {
     margin-bottom: 45px;
   }
   .presents__slider .products__item-img {
-    width: 159px;
+    width: 170px;
     height: 126px;
     margin-bottom: 10px;
   }
   .presents__slider .products__item-img img {
-    width: 159px;
+    width: 170px;
     height: 126px;
   }
   .presents__slider .products__item-text {
-    width: 159px;
+    width: 170px;
   }
   .presents__slider .products__item-title {
     font-size: 12px;
@@ -1376,25 +1384,8 @@ a:hover {
   .presents__slider .products__item-price {
     font-size: 9px;
   }
-  .presents__slider .products__item-img {
-    width: 158px;
-    height: 126px;
-    margin-bottom: 15px;
-  }
-  .presents__slider .products__item-img img {
-    width: 158px;
-    height: 126px;
-  }
-  .presents__slider .products__item-text {
-    width: 158px;
-  }
-  .presents__slider .products__item-title {
-    font-size: 12px;
-    line-height: 19px;
-  }
-  .presents__slider .products__item-price {
-    font-size: 9px;
-    line-height: 19px;
+  .presents__slider .products__item {
+    margin-right: 5px;
   }
   .presents__arrow {
     top: -55px;
@@ -1416,7 +1407,7 @@ a:hover {
     margin: 35px 0;
   }
   .presents__cards .catalogs__item {
-    margin-bottom: 0;
+    margin-bottom: 30px;
   }
   .presents__cards .catalogs__item-img {
     width: 230px;
@@ -1434,7 +1425,7 @@ a:hover {
     font-size: 16px;
   }
   .presents__cards-add .catalogs__item {
-    margin-bottom: 0;
+    margin-bottom: 30px;
   }
   .presents__cards-add .catalogs__item-img {
     width: 96px;
@@ -1454,9 +1445,13 @@ a:hover {
   .presents__slider {
     margin: 50px 0;
   }
+  .presents__slider .products__item {
+    margin-bottom: 45px;
+  }
   .presents__slider .products__item-img {
     width: 230px;
     height: 200px;
+    margin-bottom: 10px;
   }
   .presents__slider .products__item-img img {
     width: 230px;
@@ -1467,11 +1462,12 @@ a:hover {
   }
   .presents__slider .products__item-title {
     font-size: 18px;
-    line-height: 30px;
   }
   .presents__slider .products__item-price {
     font-size: 14px;
-    line-height: 30px;
+  }
+  .presents__slider .products__item {
+    margin-right: 0;
   }
   .presents__arrow {
     top: -55px;
@@ -1485,6 +1481,66 @@ a:hover {
   }
   .presents__arrow-next {
     right: 30px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .presents__cards .catalogs__item {
+    margin-bottom: 30px;
+  }
+  .presents__cards .catalogs__item-img {
+    width: 250px;
+    height: 200px;
+    margin-bottom: 9px;
+  }
+  .presents__cards .catalogs__item-img img {
+    width: 250px;
+    height: 200px;
+  }
+  .presents__cards .catalogs__item-text {
+    width: 250px;
+  }
+  .presents__cards .catalogs__item-title {
+    font-size: 16px;
+  }
+  .presents__cards-add .catalogs__item {
+    margin-bottom: 30px;
+  }
+  .presents__cards-add .catalogs__item-img {
+    width: 140px;
+    height: 140px;
+    margin-bottom: 9px;
+  }
+  .presents__cards-add .catalogs__item-img img {
+    width: 140px;
+    height: 140px;
+  }
+  .presents__cards-add .catalogs__item-text {
+    width: 140px;
+  }
+  .presents__cards-add .catalogs__item-title {
+    font-size: 16px;
+  }
+  .presents__slider .products__item {
+    margin-bottom: 45px;
+  }
+  .presents__slider .products__item-img {
+    width: 275px;
+    height: 200px;
+    margin-bottom: 10px;
+  }
+  .presents__slider .products__item-img img {
+    width: 275px;
+    height: 200px;
+  }
+  .presents__slider .products__item-text {
+    width: 275px;
+  }
+  .presents__slider .products__item-title {
+    font-size: 18px;
+  }
+  .presents__slider .products__item-price {
+    font-size: 14px;
   }
 }
 
@@ -1617,6 +1673,7 @@ a:hover {
 }
 
 .catalogs .catalogs__item-img img {
+  max-width: none;
   width: 100%;
   height: 102px;
   -o-object-fit: cover;
@@ -1676,6 +1733,7 @@ a:hover {
 }
 
 .catalogs .products__item-img img {
+  max-width: none;
   width: 100%;
   height: 102px;
   -o-object-fit: cover;
@@ -1702,6 +1760,11 @@ a:hover {
   color: #858585;
   font-size: 8px;
   line-height: 1.5;
+}
+
+.catalogs-all .catalogs__item {
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 @media (min-width: 768px) {
@@ -1863,8 +1926,14 @@ a:hover {
   }
 }
 
+.products .container {
+  max-width: none;
+}
+
 .products-sliders {
   margin-bottom: 20px;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .products-sliders-main__item {
@@ -1902,9 +1971,10 @@ a:hover {
 }
 
 .products-price__price {
+  margin-top: 3px;
   display: inline-block;
   background-color: #ff4646;
-  padding: 10px 30px;
+  padding: 7px 15px 5px;
   font-family: "MullerBold";
   color: #ffffff;
   font-size: 16px;
@@ -1931,8 +2001,13 @@ a:hover {
   .products {
     padding-bottom: 100px;
   }
+  .products .container {
+    max-width: 750px;
+  }
   .products-sliders {
     margin-bottom: 0;
+    padding-left: 15px;
+    padding-right: 15px;
   }
   .products-sliders-main {
     margin-bottom: 10px;
@@ -1965,10 +2040,9 @@ a:hover {
   .products-price {
     font-size: 12px;
     text-align: right;
-    line-height: 1.5;
   }
   .products-price__price {
-    padding: 0 14px;
+    padding: 8px 14px 6px;
     font-size: 18px;
   }
   .products__arrow {
@@ -1987,6 +2061,9 @@ a:hover {
 @media (min-width: 992px) {
   .products {
     padding-bottom: 125px;
+  }
+  .products .container {
+    max-width: 980px;
   }
   .products-sliders-main {
     margin-bottom: 20px;
@@ -2016,13 +2093,19 @@ a:hover {
     font-size: 18px;
   }
   .products-price__price {
-    padding: 0 20px;
+    padding: 10px 20px 6px;
     font-size: 30px;
   }
   .products__arrow {
     width: 20px;
     height: 39px;
     background-size: 20px 39px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .products .container {
+    max-width: 1170px;
   }
 }
 

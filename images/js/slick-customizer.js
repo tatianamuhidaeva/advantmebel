@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  $md = 
   $('.presents__slider').slick({
     dots: false,
     infinite: true,

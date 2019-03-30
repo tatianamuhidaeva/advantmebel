@@ -10,8 +10,8 @@
   <div class="container">
     <h1 class="page__subtitle">{.title}
       <br><span>{.subtitle}</span></h1>
-    <div class="advanges__cards row">
       {{add 'advanges'}}{{sort_icon 'advanges'}}
+    <div class="advanges__cards row">
       <foreach Advange>
         <div class="advanges__card col-12 col-md-3">
           <div class="advanges__card-img"><img src="{.image}" alt=""></div>
@@ -24,7 +24,7 @@
         {.text}
       </div>
       <div class="advanges-about__img hidden d-none d-md-block col-md-5">
-        <img src="/images/img/main/main-about.jpg" alt="">
+        <img src="{{preview d()->this->image, 263, 'auto'}}/images/img/main/main-about.jpg" alt="">
         <div class="advanges-about__logo">
           <img src="/images/img/logo-brown.png" alt="">
         </div>
@@ -35,34 +35,32 @@
 <div class="presents page">
   <div class="container bg">
     <div class="page__subtitle">Наша продукция</div>
-    {{add 'catalogs'}}
-    <div class="presents__cards row">
-      <foreach Catalog->order_by('id')->where('is_main1 = 1')>
-        <div class="col-6 col-md-3">
+    {{add 'catalogs', 'is_main1' => 1}}
+    {{sort_icon 'catalogs', 'is_main1' => 1}}
+    <div class="presents__cards d-flex justify-content-between flex-wrap">
+      <foreach Catalog->where('is_main1 = 1')>
             {{one_catalog}}
-        </div>
       </foreach>
     </div>
     <div class="page__subtitle">А так же:</div>
-    {{add 'catalogs'}}
-    <div class="presents__cards-add row">
-      <foreach Catalog->order_by('id')->where('is_main2 = 1')>
-        <div class="col-6 col-md-2">
+    {{add 'catalogs', 'is_main2' => 1}}
+    {{sort_icon 'catalogs', 'is_main2' => 1}}
+    <div class="presents__cards-add d-flex justify-content-between flex-wrap">
+      <foreach Catalog->where('is_main2 = 1')>
           {{one_catalog}}
-        </div>
       </foreach>
     </div>
     <br>
     <br>
     <div class="page__subtitle">Последние новинки</div>
-    {{add 'products'}}
+    {{add 'products', 'is_main' => 1}}
+    {{sort_icon 'products', 'is_main' => 1}}
     <div class="presents__slider">
-      <foreach Product->order_by('id DESC')->where('is_main = 1')>
+      <foreach Product->where('is_main = 1')>
         {{one_product}}
       </foreach>
     </div>
     <div class="page__subtitle">Новости</div>
-    {{add 'news'}}
     <div class="presents-news row">
       <foreach News->order_by('date_at DESC')->limit(3)>
         <div class="col-12 col-md-4">

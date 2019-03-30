@@ -16,7 +16,7 @@ class NewsController
 		$mas = array ();
     $mas[] = array ('title' => 'Главная', 'link' => '/');
 		$mas[] = array ('title' => 'Новости', 'link' => '/news');
-		$mas[] = array ('title' => d()->this->title, 'link' => d()->this->url);
+		$mas[] = array ('title' => d()->this->title, 'link' => '/news/' . d()->this->url);
 		d()->breadcrumbs = $mas;
 		print d()->view();
 	}
@@ -35,7 +35,7 @@ class NewsController
 		$mas[] = array ('title' => 'Главная', 'link' => '/');
 		$mas[] = array ('title' => d()->this->title, 'link' => d()->this->link);
 		d()->breadcrumbs = $mas;
-		d()->news->paginate(4);
+		d()->news->paginate(d()->Option->news_paginator);
 		d()->paginator = d()->Paginator->generate(d()->news);
 		print d()->view();
 	}

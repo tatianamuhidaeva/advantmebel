@@ -2,7 +2,6 @@
   &__cards
     margin: 10px 0
     +catalogs__item(25px, 9px, 130px, 99px, 11px)
-
     &-add
       +catalogs__item(25px, 9px, 130px, 99px, 11px)
   
@@ -26,30 +25,14 @@
   .presents
     &__cards
       margin: 20px 0
-      +catalogs__item-m(0, 9px, 157px, 126px, 10px)
+      +catalogs__item-m(25px, 9px, 157px, 126px, 10px)
       &-add
-        +catalogs__item-m(0, 9px, 96px, 104px, 10px)
+        +catalogs__item-m(25px, 9px, 96px, 104px, 10px)
     &__slider
       padding: 0
-      +products__item-m(45px,10px,159px, 126px, 12px, 9px)
-
-      .products
-        &__item
-          &-img
-            width: 158px
-            height: 126px
-            margin-bottom: 15px
-            img
-              width: 158px
-              height: 126px
-          &-text
-            width: 158px
-          &-title
-            font-size: 12px
-            line-height: 19px
-          &-price
-            font-size: 9px
-            line-height: 19px
+      +products__item-m(45px,10px,170px, 126px, 12px, 9px)
+      .products__item
+        margin-right: 5px
     &__arrow
       top: -55px
       left: auto
@@ -66,27 +49,14 @@
   .presents
     &__cards
       margin: 35px 0
-      +catalogs__item-m(0, 9px, 230px, 200px, 16px)
+      +catalogs__item-m(30px, 9px, 230px, 200px, 16px)
       &-add
-        +catalogs__item-m(0, 9px, 96px, 104px, 16px)
+        +catalogs__item-m(30px, 9px, 96px, 104px, 16px)
     &__slider
       margin: 50px 0
-      .products
-        &__item
-          &-img
-            width: 230px
-            height: 200px
-            img
-              width: 230px
-              height: 200px
-          &-text
-            width: 230px
-          &-title
-            font-size: 18px
-            line-height: 30px
-          &-price
-            font-size: 14px
-            line-height: 30px
+      +products__item-m(45px,10px,230px, 200px, 18px, 14px)
+      .products__item
+        margin-right: 0      
     &__arrow
       top: -55px
       left: auto
@@ -98,4 +68,13 @@
         right: 95px
       &-next
         right: 30px
+@media (min-width: $xl)
+  .presents
+    &__cards
+      +catalogs__item-m(30px, 9px, 250px, 200px, 16px)
+      &-add
+        +catalogs__item-m(30px, 9px, 140px, 140px, 16px)
+    &__slider      
+      +products__item-m(45px,10px,275px, 200px, 18px, 14px)
+
 

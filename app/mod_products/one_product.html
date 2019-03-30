@@ -1,12 +1,12 @@
 <div class="products__item">
   <div class="products__item-img">
-    <img src="{.image}" alt="">
+    <img src="{{preview d()->this->image, 275, 'auto'}}" alt="">
     <a class="products__item-url" href="/products/{.url}"></a>
   </div>
   <div class="products__item-text">
     <a class="products__item-title" href="/products/{.url}">
       {.title}
     </a>{{edit}}{{delete}}
-    <a class="products__item-price" href="/products/{.url}">Стоимость комплекта: <nobr>{.price}</nobr></a>
+    <a class="products__item-price" href="/products/{.url}">Стоимость комплекта: <nobr><?print number_format(d()->this->price, 2, '', ' ');?> {.unit}</nobr></a>
   </div>
 </div>

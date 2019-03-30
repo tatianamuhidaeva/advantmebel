@@ -12,14 +12,14 @@
       </div>
       <div class="footer-offices col-6 offset-md-1 col-md-3">
         <div class="footer__list">
-            <foreach Catalog->order_by('id')->where('is_main1 = 1')>
+            <foreach Catalog->where('is_main1 = 1')>
             <a href="/catalogs/{.url}" class="footer__item">{.title}</a>
           </foreach>
         </div>
       </div>
       <div class="footer-areas col-6 col-md-3">
         <div class="footer__list">
-            <foreach Catalog->order_by('id')->where('is_main2 = 1')>
+            <foreach Catalog->where('is_main2 = 1')>
             <a href="/catalogs/{.url}" class="footer__item">{.title}</a>
           </foreach>
         </div>
