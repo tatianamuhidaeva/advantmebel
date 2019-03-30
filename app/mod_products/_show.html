@@ -1,7 +1,7 @@
 <div class="products page d-md-none">
   <div class="container">
     <h1 class="page__title col-12"><span>
-        <?print (d()->Catalog->where('id = ?', d()->this->catalog_id))->title?>
+        <?print d()->Catalog->where('id = ?', d()->this->catalog_id)->title?>
         &mdash; {.title}</span></h1>
     {{breadcrumbs}}
   </div>
@@ -41,7 +41,7 @@
 <div class="products page d-none d-md-block">
   <div class="container bg">
     <h1 class="page__title col-12"><span>
-        <?print (d()->Catalog->where('id = ?', d()->this->catalog_id))->title?>
+        <?print d()->Catalog->where('id = ?', d()->this->catalog_id)->title?>
         &mdash; {.title}</span></h1>
     {{breadcrumbs}}
     <div class="row">
