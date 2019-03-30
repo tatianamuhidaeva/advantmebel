@@ -3,14 +3,6 @@ $(document).ready(function () {
   //TOGGLE MENU
 
   var md = 768;
-  function openDropdown() {
-    $('.header-navbar__dropdown').toggleClass('d-block');
-    $('.header-navbar__item-arrow').toggleClass('rotate');
-    if ($(window).outerWidth(true) >= md) {
-      var wrapHeight = Math.ceil($('.header-navbar__dropdown-item').length / 2) * $('.header-navbar__dropdown-item').outerHeight();
-      $('.header-navbar__dropdown-wrap').height(wrapHeight);
-    }
-  }
 
   $('.header__toggle-btn').on('click', function () {
     $('.header-navbar__dropdown').toggleClass('d-block');

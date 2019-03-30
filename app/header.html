@@ -28,7 +28,12 @@
 </header>
 <div class="header-navbar__dropdown">
   <div class="container header-navbar__dropdown-wrap">
-    <foreach Catalog>
+    <foreach Catalog->where('is_main1 = 1')> 
+      <div class="header-navbar__dropdown-item">
+        <a href="/catalogs/{.url}">{.title}</a>
+      </div>
+    </foreach>
+    <foreach Catalog->where('is_main2 = 1')> 
       <div class="header-navbar__dropdown-item">
         <a href="/catalogs/{.url}">{.title}</a>
       </div>
