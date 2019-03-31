@@ -143,6 +143,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  visibility: hidden;
   position: relative;
   top: 0;
   left: 0;

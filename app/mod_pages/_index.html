@@ -10,7 +10,7 @@
   <div class="container">
     <h1 class="page__subtitle">{.title}
       <br><span>{.subtitle}</span></h1>
-      {{add 'advanges'}}{{sort_icon 'advanges'}}
+    {{add 'advanges'}}{{sort_icon 'advanges'}}
     <div class="advanges__cards row">
       <foreach Advange>
         <div class="advanges__card col-12 col-md-3">
@@ -39,7 +39,7 @@
     {{sort_icon 'catalogs', 'is_main1' => 1}}
     <div class="presents__cards d-flex justify-content-between flex-wrap">
       <foreach Catalog->where('is_main1 = 1')>
-            {{one_catalog}}
+        {{one_catalog}}
       </foreach>
     </div>
     <div class="page__subtitle">А так же:</div>
@@ -47,7 +47,7 @@
     {{sort_icon 'catalogs', 'is_main2' => 1}}
     <div class="presents__cards-add d-flex justify-content-between flex-wrap">
       <foreach Catalog->where('is_main2 = 1')>
-          {{one_catalog}}
+        {{one_catalog}}
       </foreach>
     </div>
     <br>
@@ -64,11 +64,11 @@
     <div class="presents-news row">
       <foreach News->order_by('date_at DESC')->limit(3)>
         <div class="col-12 col-md-4">
-            {{one_news}}
+          {{one_news}}
         </div>
       </foreach>
-      <a href="/news" class="presents-news__all offset-11 col-2 page-text">все новости</a>
+      <a href="/news" class="presents-news__all offset-9 col-3 offset-md-10 col-md-2 page__text">все новости</a>
     </div>
-    
+
   </div>
 </div>
