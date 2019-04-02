@@ -360,7 +360,7 @@ a:hover {
     height: 12px;
   }
   .page__subtitle {
-    font-size: 14px;
+    font-size: 18px;
     margin-bottom: 30px;
   }
   .page__breadcrumbs {
@@ -403,7 +403,7 @@ a:hover {
     height: 15px;
   }
   .page__subtitle {
-    font-size: 22px;
+    font-size: 28px;
     margin-bottom: 45px;
   }
   .page__subtitle span {
@@ -543,8 +543,6 @@ a:hover {
   font-family: 'MullerMedium';
   color: #333333;
   font-size: 14px;
-  -webkit-transition: visibility 0s;
-  transition: visibility 0s;
 }
 
 .header-navbar__dropdown-item a:hover {
@@ -1496,6 +1494,26 @@ a:hover {
   }
   .presents__arrow-next {
     right: 30px;
+  }
+  .presents-news .news__item {
+    margin-bottom: 37px;
+  }
+  .presents-news .news__item-date {
+    font-family: 'MullerLight';
+    color: #858585;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  .presents-news .news__item-title {
+    font-family: 'MullerMedium';
+    color: #333333;
+    font-size: 18px;
+  }
+  .presents-news .news__item-text {
+    font-family: 'MullerLight';
+    color: #333333;
+    font-size: 14px;
+    line-height: 1.5;
   }
 }
 

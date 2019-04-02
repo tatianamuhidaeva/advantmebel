@@ -2,20 +2,11 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>
-		<?php if(d()->Seo->title != ''){?>{Seo.title}
-		<?php } else { if(iam()){?>Тайтл не заполнен в модуле SEO -
-		<?php }?>{.title}
-		<?php }?>
-	</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, minimal-ui">
-	<?if(d()->Seo->description != ''):?>
-	<meta name="description" content="{Seo.description|h}" />
-	<?endif;?>
-	<?if(d()->Seo->keywords != ''):?>
-	<meta name="keywords" content="{Seo.keywords|h}" />
-	<?endif;?>
-
+	<title>{Seo.title}</title>
+	<meta name="description" content="{Seo.description}" />
+	<meta name="keywords" content="{Seo.keywords}" />
+	<meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1,user-scalable=no">
+	
 	<link rel="stylesheet" href="/images/css/normalize.css">
 	<link rel="stylesheet" href="/images/css/bootstrap-grid.css">
 	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
@@ -27,7 +18,7 @@
 	<script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 	<script src="/images/js/slick-customizer.js"></script>
 	<script src="/images/js/main.js?<?= filemtime($_SERVER['DOCUMENT_ROOT'] . '/images/js/main.js') ?>"></script>
-	<script src="/images/js/validate-and-send.js"></script>
+	<!-- <script src="/images/js/validate-and-send.js"></script> -->
 	{Option.meta}
 </head>
 <body>

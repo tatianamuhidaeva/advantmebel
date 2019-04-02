@@ -11,10 +11,13 @@ route('/products/', 'products#show');
 route('/news', 'news#index');
 route('/news/', 'news#show');
 
-route('/ajax/popup', 'main', 'popup');
+route('/ajax/popup', 'main', 'popup#popup');
+// route('/thankyou', 'main', 'popup#thanks');
 
 //закомментировала до того, как разберемся. Пока ajax выдает success
-// route('/ajax/form1', 'main', 'pages#send_form');
+route('/ajax/form1', 'main', 'popup#send_form');
+
+route('/robots.txt', 'main', 'show_robots');
 
 //route('/news/index', 'news#index');
 //зарегистрировать контроллер newscontroller по адресу /news/
