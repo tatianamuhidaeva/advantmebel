@@ -1,13 +1,12 @@
 <?php
 class CatalogsController
 {
-	function show($url)
-	{
+	function show($url){
 		d()->this = d()->Catalog->find_by_url($url);
 		if (d()->this->is_empty) {
 			$mas = array ();
 			$mas[] = array ('title' => 'Главная', 'link' => '/');
-			$mas[] = array ('title' => 'Каталог', 'link');
+			$mas[] = array ('title' => 'Каталог', 'link' => '/catalogs');
 			$mas[] = array ('title' => 'Ошибка 404');
 			d()->message="Такой страницы не существует".d()->add(array('catalogs','url'=>$url));
 			d()->breadcrumbs = $mas;
@@ -17,7 +16,7 @@ class CatalogsController
 		$mas = array ();
 		$mas1 = array ();
     while (true) {
-      $mas1[] = array ('title' => d()->cat->title, 'link' => '/catalogs' . d()->cat->url);
+      $mas1[] = array ('title' => d()->cat->title, 'link' => '/catalogs/' . d()->cat->url);
       d()->cat = d()->Catalog->where('id = ?', d()->cat->catalog_id);
       if (d()->cat->is_empty) {
         break;

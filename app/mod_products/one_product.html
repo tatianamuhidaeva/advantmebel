@@ -7,6 +7,6 @@
     <a class="products__item-title" href="/products/{.url}">
       {.title}
     </a>{{edit}}{{delete}}
-    <a class="products__item-price" href="/products/{.url}">Стоимость комплекта: <nobr><?print number_format(d()->this->price, 2, '', ' ');?> {.unit}</nobr></a>
+    <a class="products__item-price" href="/products/{.url}">Стоимость комплекта: <nobr><?print number_format(d()->this->price, 0, '', ' ');?> {.unit}</nobr></a>
   </div>
 </div>

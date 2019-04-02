@@ -10,13 +10,14 @@
             {{add 'catalogs', 'catalog_id' => 0}}
             {{sort_icon 'catalogs', 'catalog_id' => 0}}
           </h3>
-          <foreach Catalog>
+          <foreach Catalog->where('catalog_id = 0')>
             <a href="/catalogs/{.url}" class="catalogs-menu__item">{.title}{{edit}}{{delete}}</a>
           </foreach>
         </div>
         <div class="catalogs-menu-news">
           <h3 class="catalogs-menu__subtitle">
             Новости
+            {{add 'news'}}
           </h3>
           <div class="catalogs-menu-news__items">
             <foreach News->order_by('date_at DESC')->limit(3)>

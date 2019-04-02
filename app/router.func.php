@@ -11,7 +11,8 @@ route('/products/', 'products#show');
 route('/news', 'news#index');
 route('/news/', 'news#show');
 
-route('/ajax/fancybox', 'main', 'fancybox');
+route('/ajax/popup', 'main', 'fancybox');
+route('/ajax/dropdown', 'main', 'dropdown');
 //закомментировала до того, как разберемся. Пока ajax выдает success
 // route('/ajax/form1', 'main', 'pages#send_form');
 

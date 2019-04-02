@@ -1,31 +1,32 @@
 <div class="main">
   <div class="container main-bg">
     <h1 class="main__title">{Option.banner_title}
-      <span>{Option.banner_subtitle}</span>
+      <span>{Option.banner_subtitle}{{edit}}</span>
     </h1>
     <a href="{Option.banner_btn_url}" class="btn">{Option.banner_btn_text}</a>
   </div>
 </div>
-<div class="advanges">
+<div class="vantage">
   <div class="container">
     <h1 class="page__subtitle">{.title}
-      <br><span>{.subtitle}</span></h1>
-    {{add 'advanges'}}{{sort_icon 'advanges'}}
-    <div class="advanges__cards row">
+      <br><span>{.subtitle}</span>{{edit}}</h1>
+    {{add 'vantage'}}{{sort_icon 'vantage'}}
+    <div class="vantage__cards row">
       <foreach Advange>
-        <div class="advanges__card col-12 col-md-3">
-          <div class="advanges__card-img"><img src="{.image}" alt=""></div>
-          <div class="advanges__card-text">{.text}{{edit}}{{delete}}</div>
+        <div class="vantage__card col-12 col-md-3">
+          <div class="vantage__card-img"><img src="{.image}" alt=""></div>
+          <div class="vantage__card-text">{.text}{{edit}}{{delete}}</div>
         </div>
       </foreach>
     </div>
-    <div class="advanges-about row align-items-center">
-      <div class="advanges-about__text col-12 col-md-7">
+    <div class="vantage-about row align-items-center">
+      <div class="vantage-about__text page__text col-12 col-md-7">
+        {{edit}}
         {.text}
       </div>
-      <div class="advanges-about__img hidden d-none d-md-block col-md-5">
+      <div class="vantage-about__img hidden d-none d-md-block col-md-5">
         <img src="{{preview d()->this->image, 263, 'auto'}}/images/img/main/main-about.jpg" alt="">
-        <div class="advanges-about__logo">
+        <div class="vantage-about__logo">
           <img src="/images/img/logo-brown.png" alt="">
         </div>
       </div>
@@ -34,40 +35,43 @@
 </div>
 <div class="presents page">
   <div class="container bg">
-    <div class="page__subtitle">Наша продукция</div>
-    {{add 'catalogs', 'is_main1' => 1}}
-    {{sort_icon 'catalogs', 'is_main1' => 1}}
+    <div class="page__subtitle">Наша продукция
+      {{add 'catalogs', 'is_main' => 1}}
+      {{sort_icon 'catalogs', 'is_main' => 1}}
+    </div>
     <div class="presents__cards d-flex justify-content-between flex-wrap">
-      <foreach Catalog->where('is_main1 = 1')>
+      <foreach Catalog->where('is_main = 1')>
         {{one_catalog}}
       </foreach>
     </div>
-    <div class="page__subtitle">А так же:</div>
-    {{add 'catalogs', 'is_main2' => 1}}
-    {{sort_icon 'catalogs', 'is_main2' => 1}}
+    <div class="page__subtitle">А так же:
+      {{add 'catalogs', 'is_main' => 2}}
+      {{sort_icon 'catalogs', 'is_main' => 2}}
+    </div>
     <div class="presents__cards-add d-flex justify-content-between flex-wrap">
-      <foreach Catalog->where('is_main2 = 1')>
+      <foreach Catalog->where('is_main = 2')>
         {{one_catalog}}
       </foreach>
     </div>
     <br>
     <br>
-    <div class="page__subtitle">Последние новинки</div>
-    {{add 'products', 'is_main' => 1}}
-    {{sort_icon 'products', 'is_main' => 1}}
+    <div class="page__subtitle">Последние новинки
+      {{add 'products', 'is_main' => 1}}
+      {{sort_icon 'products', 'is_main' => 1}}
+    </div>
     <div class="presents__slider">
       <foreach Product->where('is_main = 1')>
         {{one_product}}
       </foreach>
     </div>
-    <div class="page__subtitle">Новости</div>
+    <div class="page__subtitle">Новости{{add 'news'}}</div>
     <div class="presents-news row">
       <foreach News->order_by('date_at DESC')->limit(3)>
         <div class="col-12 col-md-4">
           {{one_news}}
         </div>
       </foreach>
-      <a href="/news" class="presents-news__all offset-9 col-3 offset-md-10 col-md-2 page__text">все новости</a>
+      <a href="/news" class="presents-news__all  page__text">все новости</a>
     </div>
 
   </div>

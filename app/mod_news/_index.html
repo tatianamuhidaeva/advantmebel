@@ -5,7 +5,7 @@
     </h1>
     {{breadcrumbs}}
     <div class="news__list col-12 col-md-8 p-0">
-      <foreach news>
+      <foreach News->order_by('date_at DESC')>
         <div class="news__card">
           <?if (d()->this->image != ''){?>
           <div class="news__card-img">
@@ -16,7 +16,6 @@
           <?}?>
           <div class="news__card-info">
             {{one_news}}
-            {{edit}}{{delete}}
           </div>
         </div>
       </foreach>

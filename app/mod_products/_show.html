@@ -17,7 +17,7 @@
           </div>
           <foreach Photo->where('product_id =?', d()->this->id)>
             <div class="products-sliders-main__item">
-              <img src="{{preview d()->this->image, 652, 'auto'}}" alt="">{{delete}}
+              <img src="{{preview d()->this->image, 652, 'auto'}}" alt="">{{edit}}{{delete}}
             </div>
           </foreach>
         </div>

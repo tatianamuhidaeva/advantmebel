@@ -11,7 +11,7 @@ class ProductsController
 			$mas[] = array ('title' => 'Главная', 'link' => '/');
 			$mas[] = array ('title' => 'Каталог', 'link' => '/catalogs');
 			$mas[] = array ('title' => 'Ошибка 404');
-			d()->message="Такой страницы не существует".d()->add(array('product','url'=>$url));
+			d()->message="Такой страницы не существует".d()->add(array('products','url'=>$url));
 			d()->breadcrumbs = $mas;
 			return d()->error('404');
 		}

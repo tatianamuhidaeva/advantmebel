@@ -59,7 +59,8 @@
       font-size: 14px
       text-decoration: none
     &__dropdown
-      display: none
+      display: none 
+      // visibility: hidden
       width: 100%
       padding: 20px 15px 50px
       background-color: $bg-light-color
@@ -76,6 +77,7 @@
           +medium
           color: $text-color
           font-size: 14px
+          transition: visibility 0s
           &:hover
             color: #B68B2E
 
@@ -114,8 +116,8 @@
           transition: transform 0.2s
       &__dropdown
         position: absolute
-        top: 63px
-        left: calc(50% - 188px)
+        top: 35px
+        left: 0
         width: 390px
         padding: 22px 21px 30px
         &-wrap
@@ -145,7 +147,7 @@
           vertical-align: 9%
           font-size: 8px
       &__dropdown
-        left: calc(50% - 295px)
+        // left: calc(50% - 295px)
         width: 600px
         padding: 33px 33px 45px
         &-item

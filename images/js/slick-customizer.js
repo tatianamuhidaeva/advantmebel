@@ -54,7 +54,6 @@ $(document).ready(function(){
     nextArrow: '<div class="slick-arrow slick-arrow-next products__arrow products__arrow-next"></div>',
     asNavFor: '.products-sliders-main',
     focusOnSelect: true,
-    centerMode: true,
     centerPadding: '0px'
   });
   
