@@ -4,6 +4,16 @@
 */
 class PagesController
 {
+	function cook () {
+		if (d()->validate('cook')) {
+			setcookie("_politika", 'agree', 0x7FFFFFFF, '/');
+			
+			print '$(".cook_foot").hide();';
+		}
+		
+		d()->reload();
+	}
+
 	function show()
 	{
 		$url = url();
