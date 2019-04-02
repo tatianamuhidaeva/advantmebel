@@ -12,6 +12,7 @@ route('/news', 'news#index');
 route('/news/', 'news#show');
 
 route('/ajax/popup', 'main', 'popup#popup');
+// route('/ajax/thanks', 'main', 'popup#thanks');
 
 route('/ajax/form1', 'main', 'popup#send_form');
 

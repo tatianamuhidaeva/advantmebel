@@ -201,6 +201,9 @@
 
 .popup__input {
   width: 100%;
+}
+
+.popup__input-wrap {
   margin-bottom: 13px;
 }
 
@@ -229,7 +232,7 @@
     padding: 32px 60px;
     width: 347px;
   }
-  .popup__input {
+  .popup__input-wrap {
     margin-bottom: 13px;
   }
   .popup__btn {
@@ -242,7 +245,7 @@
     padding: 50px 90px;
     width: 555px;
   }
-  .popup__input {
+  .popup__input-wrap {
     margin-bottom: 15px;
   }
   .popup__btn {
@@ -341,7 +344,7 @@ a:hover {
 }
 
 .error {
-  color: red;
+  border: 1px solid red;
 }
 
 .rotate {
@@ -732,7 +735,7 @@ a:hover {
 }
 
 .footer__item-catalog {
-  max-width: 49%;
+  max-width: 48%;
 }
 
 .footer-copyright {
@@ -2004,7 +2007,7 @@ a:hover {
 }
 
 .products-price__price {
-  margin-top: 3px;
+  margin-top: 10px;
   display: inline-block;
   background-color: #ff4646;
   padding: 7px 15px 5px;
@@ -2054,11 +2057,14 @@ a:hover {
     height: 306px;
   }
   .products-sliders-nav {
-    padding: 0 20px;
+    padding: 0 10px;
+  }
+  .products-sliders-nav__item:focus {
+    outline: none;
   }
   .products-sliders-nav__item img {
-    width: 65px;
-    height: 65px;
+    width: 60px;
+    height: 60px;
     -o-object-fit: cover;
        object-fit: cover;
     max-width: none;
@@ -2076,12 +2082,12 @@ a:hover {
   }
   .products-price__price {
     padding: 8px 14px 6px;
-    font-size: 18px;
+    font-size: 16px;
   }
   .products__arrow {
-    width: 15px;
-    height: 27px;
-    background-size: 15px 27px;
+    width: 10px;
+    height: 17px;
+    background-size: 10px auto;
   }
   .products__arrow-prev {
     left: 0;
@@ -2110,11 +2116,11 @@ a:hover {
     height: 485px;
   }
   .products-sliders-nav {
-    padding: 0 25px;
+    padding: 0 15px;
   }
   .products-sliders-nav__item img {
-    width: 90px;
-    height: 90px;
+    width: 82px;
+    height: 82px;
   }
   .products__subtitle {
     font-size: 18px;
@@ -2127,12 +2133,12 @@ a:hover {
   }
   .products-price__price {
     padding: 10px 20px 6px;
-    font-size: 30px;
+    font-size: 22px;
   }
   .products__arrow {
-    width: 20px;
-    height: 39px;
-    background-size: 20px 39px;
+    width: 15px;
+    height: 26px;
+    background-size: 15px auto;
   }
 }
 

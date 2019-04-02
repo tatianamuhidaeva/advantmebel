@@ -9,7 +9,6 @@ function thanks(){
 }
 
 function send_form () {
-	print_r("Передача формы");
 	if (d()->validate('popup_form')) {
 		if (isset(d()->params['check']) && d()->params['check'] == '') {
 			d()->form_title = 'Форма Заказать звонок';
@@ -42,13 +41,13 @@ function send_form () {
 			$cont->name = d()->params['name'];
 			$cont->form_name = d()->form_title;
 			$cont->save;
-			
+			// print "$.fancybox.open({'href': '/ajax/thanks', 'type': 'ajax', helpers: { overlay: { locked: false }}});";
 			// print 'document.location.href="/thankyou"';
+			print "$('#form_callback_id').find('input').val(''); $('.popup-success').addClass('d-flex');$('.popup-form').addClass('d-none');$('#form_callback_id').trigger('reset');";
 		}
 		
 		exit;
 	}
-	
 	d()->reload();
 }
 }

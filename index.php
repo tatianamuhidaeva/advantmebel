@@ -5,7 +5,7 @@
 	include_once ('cms/cms.php');
 	
 	header('Content-type: text/html; Charset=UTF-8');
-	// iam_developer(true);
+	iam_developer(true);
 	$result =  d()->main();
 	
 	$exec_time = microtime(true) - $start_time;

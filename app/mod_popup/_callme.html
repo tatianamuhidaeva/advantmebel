@@ -6,12 +6,14 @@
         {{form 'popup_form', 'action' => '/ajax/form1', 'id' => 'form_callback_id', 'ajax' => true, 'class' => 'popup__form'}}
           {{input 'check', 'style' => 'display: none;', 'value' => '', 'id' => 'slider_form_check'}}
           <div class="popup__input-wrap">
+          <div>
             {{input 'name', 'id' => 'popup__name', 'class' => 'popup__input input', 'placeholder'=>'Ваше имя'}}
-            <div class="error error-name"></div>
+            </div>
           </div>
           <div class="popup__input-wrap">
-            {{input 'phone', 'id' => 'popup__phone', 'class' => 'popup__input input', 'placeholder'=>'Ваш телефон','type'=>'tel'}}
-            <div class="error error-phone"></div>
+            <div>
+              {{input 'phone', 'id' => 'popup__phone', 'class' => 'popup__input input', 'placeholder'=>'Ваш телефон','type'=>'tel'}}
+            </div>
           </div>
   
           <button type="submit" class="popup__btn btn">Перезвоните мне</button>
