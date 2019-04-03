@@ -10,11 +10,22 @@
           <span class="footer-callback__address">{Option.addr}</span>
         </div>
       </div>
-      <div class="footer-areas col-12 offset-md-1 col-md-6">
+      <div class="footer-areas col-6 offset-md-1 col-md-3">
           {{add 'catalogs', 'catalog_id' => 0}}
           {{sort_icon 'catalogs', 'catalog_id' => 0}}
+          <?$i=floor(count(d()->Catalog->where('catalog_id=0'))/2);?>
         <div class="footer__list footer__list-catalog">
-          <foreach Catalog->where('catalog_id = 0')>
+          <foreach Catalog->where('catalog_id = 0')->limit($i-1)>
+            <div class="footer__item footer__item-catalog">
+                {{edit}}{{delete}}
+              <a href="/catalogs/{.url}">{.title}</a>
+            </div>
+          </foreach>
+        </div>
+      </div>
+      <div class="footer-areas col-6 col-md-3">
+        <div class="footer__list footer__list-catalog">
+          <foreach Catalog->where('catalog_id = 0')->limit($i, count(d()->Catalog))>
             <div class="footer__item footer__item-catalog">
                 {{edit}}{{delete}}
               <a href="/catalogs/{.url}">{.title}</a>

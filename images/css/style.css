@@ -736,10 +736,6 @@ a:hover {
   font-size: 12px;
 }
 
-.footer__item-catalog {
-  max-width: 48%;
-}
-
 .footer-copyright {
   padding: 13px 0 18px;
   border-top: 1px solid #cfa74f;

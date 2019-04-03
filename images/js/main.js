@@ -11,7 +11,7 @@ $(document).ready(function () {
     wrapHeightFooter = Math.ceil($('.footer__item-catalog').length / 2)*Math.max.apply(null, mass);
     $('.footer__list-catalog').height(wrapHeightFooter);
   }
-  footerHeight();
+  // footerHeight();
 
   //При изменении ширины окна делаем пересчет высоты подвала,
   //на экранах больше md проверяем отсутствие display: none,
