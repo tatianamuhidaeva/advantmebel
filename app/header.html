@@ -19,13 +19,15 @@
             <div class="header-navbar__list d-md-flex">
                {{add 'pages', 'page_id'=>0, 'is_mainmenu' => 1}}
                {{sort_icon 'pages', 'page_id'=>0, 'is_mainmenu' => 1}}
+               <?$counter = 0;?>
                <foreach Page->where('is_mainmenu = 1 AND (page_id) = 0')>
+                  <? $counter++;?>
                   {{edit}}{{delete}}
                   <?php d()->childs = d()->Page->where('is_mainmenu = 1 AND page_id = ?', d()->this->id);?>
                   <?php if (d()->this->is_showing_table == 1 || d()->childs->ne) { ?>
-                     <a href="{.url}" class="header-navbar__item header__toggle-dropdown">
+                     <a href="{.url}" class="header-navbar__item header__toggle-dropdown <?print ('menu-' . $counter)?>">
                            {.title}&nbsp;<div class="header-navbar__item-arrow">&#9660;</div></a>
-                           <div class="header-navbar__dropdown">
+                           <div class="header-navbar__dropdown <?print ('menu-' . $counter)?>">
                                  <div class="container header-navbar__dropdown-wrap">
                                    <?php if (d()->this->is_showing_table == 1) { ?>
                                    <?if (iam()){?>
